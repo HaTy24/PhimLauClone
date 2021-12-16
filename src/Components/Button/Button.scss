@@ -1,0 +1,17 @@
+.buttonViewMore {
+  color: red;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    color: yellow;
+  }
+}
+.buttonLogin {
+  background-color: #444444;
+  border: none;
+  outline: none;
+  padding: 8.5px 14px;
+  border-radius: 3px 0 0 3px;
+}
