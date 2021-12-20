@@ -1,5 +1,6 @@
+@import "../../Variable.scss";
 .buttonViewMore {
-  color: red;
+  color: $second-color;
   font-weight: 700;
   border: none;
   background-color: transparent;
@@ -8,10 +9,78 @@
     color: yellow;
   }
 }
+
+.buttonWatchNow {
+  background-color: $second-color;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
 .buttonLogin {
-  background-color: #444444;
+  background-color: $third-color;
   border: none;
   outline: none;
-  padding: 8.5px 14px;
+  padding: 7px 14px;
   border-radius: 3px 0 0 3px;
+}
+
+.buttonWatch {
+  display: block;
+  background-color: $second-color;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.buttonFavorite {
+  color: #000;
+  border: none;
+  display: block;
+  padding: 5px 20px;
+  width: 100%;
+  ion-icon {
+    color: #000;
+  }
+}
+
+.buttonPlay {
+  display: block;
+  background-color: $second-color;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.buttonShare {
+  background-color: #3c73dc;
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  ion-icon {
+    font-size: 25px;
+  }
+}
+
+.buttonPlayList {
+  background-color: transparent;
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid $second-color;
+  ion-icon {
+    font-size: 25px;
+  }
 }

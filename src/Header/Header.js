@@ -7,10 +7,12 @@ function Header() {
   return (
     <div className="header">
       <div className="header-left">
-        <img
-          src="https://3dwarehouse.sketchup.com/warehouse/v1.0/publiccontent/bdd867c5-a095-4df5-b240-31390044b819"
-          alt=""
-        />
+        <Link to="/">
+          <img
+            src="https://3dwarehouse.sketchup.com/warehouse/v1.0/publiccontent/bdd867c5-a095-4df5-b240-31390044b819"
+            alt=""
+          />
+        </Link>
         <Link to="/">Trang chủ</Link>
         <Link to="/">Phim lẻ</Link>
         <Link to="/">Phim bộ</Link>

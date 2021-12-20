@@ -1,0 +1,40 @@
+@import "../Variable.scss";
+.footer {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $header-color;
+  // background-image: url("https://wallpaperaccess.com/full/1076854.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  padding: 50px;
+  &-left {
+    width: 70%;
+  }
+  &-title {
+    font-size: 25px;
+    color: $second-color;
+    margin-bottom: 20px;
+  }
+  &-items {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+  &-right {
+    ion-icon {
+      font-size: 35px;
+      margin-left: 20px;
+      cursor: pointer;
+      &:hover {
+        color: $second-color;
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Title = () => {
+function Item() {
   return <div></div>;
-};
+}
+
+export default Item;

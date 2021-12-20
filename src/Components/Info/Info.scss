@@ -1,0 +1,81 @@
+@import "../../Variable.scss";
+.info {
+  padding-top: 100px;
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  &-left {
+    img {
+      width: 300px;
+      margin-bottom: 10px;
+    }
+  }
+  &-right {
+    width: 70%;
+  }
+
+  &-title {
+    font-size: 40px;
+    color: $second-color;
+  }
+  &-runtime {
+    padding: 30px 0;
+    display: block;
+  }
+  &-point {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  &-imdb {
+    background-color: #f2c010;
+    display: inline-block;
+    color: #000;
+    font-weight: 700;
+    padding: 0px 3px;
+    border-radius: 3px;
+  }
+  &-average {
+    font-weight: 700;
+  }
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  &-genres {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    span {
+      color: #999;
+    }
+  }
+  &-genre {
+    border: 1px solid$third-color;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+  &-countries {
+    display: block;
+  }
+  &-countries {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+    span {
+      color: #999;
+    }
+  }
+  &-releasedate {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+    span {
+      color: #999;
+    }
+  }
+}
