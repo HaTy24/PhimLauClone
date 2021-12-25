@@ -1,0 +1,60 @@
+@import "../../Variable.scss";
+.single {
+  padding-top: 70px;
+  &-title {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      font-size: 30px;
+      color: $second-color;
+    }
+    span {
+      display: block;
+      color: red;
+      padding-bottom: 7px;
+    }
+  }
+  &-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  input {
+    background-color: $third-color;
+    border-radius: 5px;
+  }
+  &-season {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    input {
+      padding: 10px;
+      border: none;
+    }
+  }
+  &-episode {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 5px;
+    input {
+      padding: 10px;
+      border: none;
+    }
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .single {
+    iframe {
+      height: 300px;
+    }
+    &-title {
+      display: block;
+    }
+    &-button {
+      margin-top: 20px;
+    }
+  }
+}

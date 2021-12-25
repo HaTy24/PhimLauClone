@@ -84,7 +84,6 @@ function Trending() {
                         <label>Release</label>
                         {detail.release_date}
                       </span>
-
                       <span className="trending-vote">
                         <label>IMDb</label>
                         {detail.vote_average}
@@ -103,7 +102,11 @@ function Trending() {
             {nowPlaying.map((item, i) => {
               return (
                 <Link to={`movie/${item.title.replaceAll(" ", "")}/${item.id}`}>
-                  <div key={i} className="trending-nowPlaying-item">
+                  <div
+                    key={i}
+                    className="trending-nowPlaying-item"
+                    onClick={() => window.scroll(0, 0)}
+                  >
                     <img src={`${img_300}${item.poster_path}`} alt="" />
                     <span>{item.title}</span>
                   </div>

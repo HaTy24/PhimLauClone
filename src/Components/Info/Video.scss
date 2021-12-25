@@ -1,0 +1,76 @@
+@import "../../Variable.scss";
+
+.trailer {
+  margin-top: 50px;
+  &-title {
+    font-size: 25px;
+    color: $second-color;
+    margin-bottom: 15px;
+  }
+  .slick-prev {
+    left: 0% !important;
+    z-index: 1;
+    border-radius: 0 50% 50% 0;
+  }
+  .slick-next {
+    right: 0% !important;
+    z-index: 1;
+    border-radius: 50% 0 0 50%;
+  }
+
+  .slick-arrow {
+    height: 65%;
+    width: 40px;
+    background-color: $main-color;
+    &:hover,
+    &:focus {
+      background-color: $main-color;
+    }
+  }
+  span {
+    display: block;
+  }
+  &-item {
+    border: 1px solid $four-color;
+    padding: 30px 10px 10px;
+    background-color: $third-color;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    height: 110px;
+    &:hover {
+      border: 1px solid orange;
+    }
+  }
+  &-name {
+    color: $second-color;
+    font-weight: 700;
+  }
+  &-type {
+    font-size: 14px;
+  }
+
+  &-official {
+    background-color: yellow;
+    width: 100px;
+    color: #000;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &-iframe {
+    width: 100%;
+    height: 515px;
+  }
+}
+
+@media screen and(max-width:767px) {
+  .trailer {
+    &-iframe {
+      height: 315px;
+    }
+  }
+}

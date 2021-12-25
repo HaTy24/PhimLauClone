@@ -1,16 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Love+Light&family=Oooh+Baby&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
 @import "./Variable.scss";
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
   color: $text-color;
   font-size: 16px;
-  overflow-x: hidden;
 }
 body {
   background-color: $main-color;
+  width: 100%;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -30,4 +32,13 @@ button {
 
 .App {
   padding: 0 50px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .App {
+    padding: 0 30px;
+  }
 }

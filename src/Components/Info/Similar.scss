@@ -1,0 +1,19 @@
+@import "../../Variable.scss";
+.similar {
+  //   display: grid;
+  //   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  //   gap: 10px;
+  margin-top: 50px;
+  &-item {
+    text-align: center;
+    // border: 1px solid orange;
+    cursor: pointer;
+    background-color: $third-color;
+    img {
+      width: 100%;
+    }
+    h2 {
+      font-size: 14px;
+    }
+  }
+}

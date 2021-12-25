@@ -2,9 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import SingleMovie from "./Components/Single/SingleMovie";
 import Home from "./Home";
 import Info from "./Components/Info/Info";
+import WatchMovie from "./Components/WatchMovie/WatchMovie";
+import ViewMore from "./Components/ViewMore/ViewMore";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:type/:name/:id" element={<Info />} />
-          <Route path="/watch/:id" element={<SingleMovie />} />
+          <Route path="/:type/:name/:id/watch" element={<WatchMovie />} />
+          <Route path="/:type" element={<ViewMore />} />
         </Routes>
       </div>
       <Footer />

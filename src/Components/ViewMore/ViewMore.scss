@@ -1,0 +1,24 @@
+@import "../../Variable.scss";
+.viewMore {
+  padding-top: 100px;
+  input {
+    background-color: $main-color;
+    padding: 8px 14px;
+    border: 2px solid $third-color;
+    border-radius: 8px;
+    margin-right: 8px;
+  }
+  &-pagination {
+    margin-top: 40px;
+  }
+}
+@media screen and(max-width:767px) {
+  .viewMore {
+    &-first,
+    &-last {
+      display: block;
+      background-color: red;
+      margin: 10px 0;
+    }
+  }
+}

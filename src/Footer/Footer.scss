@@ -1,15 +1,13 @@
 @import "../Variable.scss";
 .footer {
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: $header-color;
-  // background-image: url("https://wallpaperaccess.com/full/1076854.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
   padding: 50px;
   &-left {
-    width: 70%;
+    width: 50%;
   }
   &-title {
     font-size: 25px;
@@ -27,6 +25,25 @@
       font-size: 30px;
     }
   }
+  &-center {
+    div {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    ion-icon {
+      font-size: 100px;
+      color: #000;
+    }
+    h2 {
+      font-size: 40px;
+      font-family: "Oooh Baby", cursive;
+      color: #55a8f1;
+    }
+    span {
+      color: #ccc;
+    }
+  }
   &-right {
     ion-icon {
       font-size: 35px;
@@ -35,6 +52,16 @@
       &:hover {
         color: $second-color;
       }
+    }
+  }
+}
+
+@media screen and(max-width:1080px) {
+  .footer {
+    display: block;
+    text-align: center;
+    &-left {
+      width: 100%;
     }
   }
 }

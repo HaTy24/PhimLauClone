@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Button.scss";
 
-export const BtnViewMore = () => {
+export const BtnViewMore = (props) => {
   return (
-    <div>
+    <Link to={`${props.api ? props.api.split("/")[1] : null}`}>
       <input className="buttonViewMore" type="submit" value="View more >>" />
-    </div>
+    </Link>
   );
 };
 
@@ -27,10 +27,17 @@ export const BtnLogin = () => {
 };
 
 export const BtnWatch = (props) => {
+  const handleClearLocation = () => {
+    window.scroll(0, 0);
+  };
   return (
-    <Link to={`watch/${props.id}`}>
+    <Link
+      to={`/${props.type ? props.type.split("/")[1] : null}/${
+        props.name ? props.name.replaceAll(" ", "") : null
+      }/${props.id}/watch`}
+    >
       <button
-        onClick={() => window.scroll(0, 0)}
+        onClick={() => handleClearLocation()}
         className="buttonWatch"
         type="submit"
       >

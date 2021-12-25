@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BaseUrl, key, img_300, img_500 } from "../config";
-import { Link, useLocation } from "react-router-dom";
+import { BaseUrl, key, img_300, unavailable, noPicture } from "../config";
 import Slider from "react-slick";
 import axios from "axios";
 import "./Cast.scss";
@@ -12,30 +11,44 @@ function Cast(props) {
     infinite: true,
     centerMode: false,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     centerPadding: "0px",
     swipeToSlide: true,
-    slidesToShow: 6,
+    slidesToShow: 8,
     speed: 500,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+        },
+      },
+    ],
   };
   useEffect(() => {
     axios
       .get(BaseUrl + props.type + "/" + props.id + "/credits" + key)
       .then((response) => setCast(response.data));
-  }, []);
+  }, [props]);
+
   return (
     <div className="cast">
+      <h2 className="trailer-title">Diễn Viên</h2>
       <Slider {...settings}>
         {cast.cast
-          ? cast.cast.slice(0, 15).map((item) => {
+          ? cast.cast.slice(0, 20).map((item) => {
               return (
-                <div
-                  style={{
-                    display: item.profile_path === null ? "none" : "block",
-                  }}
-                  className="cast-item"
-                >
-                  <img src={img_300 + item.profile_path} alt="" />
+                <div className="cast-item">
+                  <img
+                    src={
+                      item.profile_path
+                        ? img_300 + item.profile_path
+                        : unavailable
+                    }
+                    alt=""
+                  />
                   <h3>{item.name}</h3>
                   <span>{item.character}</span>
                 </div>

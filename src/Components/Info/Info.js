@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { BaseUrl, key, img_300, img_500 } from "../config";
+import { BaseUrl, key, img_300 } from "../config";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 import "./Info.scss";
 import { BtnPlay, BtnPlayList, BtnShare } from "../Button/Button";
 import Cast from "./Cast";
+import Video from "./Video";
+import Similar from "./Similar";
 
 function Info() {
   const [detail, setDetail] = useState([]);
@@ -13,20 +15,21 @@ function Info() {
   const min = detail.runtime - hour * 60;
   const location = useLocation();
   const type = location.pathname.split("/")[1];
+  const name = location.pathname.split("/")[2];
   const id = location.pathname.split("/")[3];
 
   useEffect(() => {
     axios
       .get(BaseUrl + type + "/" + id + key)
       .then((response) => setDetail(response.data));
-  }, []);
+  }, [type, id]);
 
   return (
     <>
       <div className="info">
         <div className="info-left">
           <img src={`${img_300}${detail.poster_path}`} alt="" />
-          <Link to={`/watch/${id}`}>
+          <Link to={`/${type}/${name}/${id}/watch`}>
             <BtnPlay />
           </Link>
         </div>
@@ -42,7 +45,7 @@ function Info() {
                 detail.number_of_seasons +
                 " phần )"}
           </span>
-          <div class="info-point">
+          <div className="info-point">
             <span className="info-imdb">IMDb</span>
             <span className="info-average">{detail.vote_average}</span>
           </div>
@@ -76,6 +79,8 @@ function Info() {
         </div>
       </div>
       <Cast id={id} type={type} />
+      <Video id={id} type={type} />
+      <Similar id={id} type={type} />
     </>
   );
 }

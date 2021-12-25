@@ -79,3 +79,33 @@
     }
   }
 }
+
+@media screen and(max-width: 1080px) {
+  .info {
+    &-button {
+      display: block;
+    }
+    &-genres {
+      margin-top: 20px;
+    }
+  }
+}
+@media screen and(max-width:767px) {
+  .info {
+    display: block;
+    &-title {
+      font-size: 30px;
+    }
+    &-left {
+      img {
+        width: 100%;
+      }
+    }
+    &-right {
+      width: 100%;
+    }
+    &-title {
+      margin-top: 20px;
+    }
+  }
+}
