@@ -36,7 +36,7 @@ function Video(props) {
     dots: false,
     infinite: false,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     swipeToSlide: true,
   };
   return (
@@ -44,9 +44,10 @@ function Video(props) {
       <h2 className="trailer-title">Trailer</h2>
       <div>
         <Slider {...settings}>
-          {video.map((item) => {
+          {video.map((item, i) => {
             return (
               <div
+                key={i}
                 className="trailer-item"
                 onClick={() => handleClickOpen(item.key, item.name)}
               >

@@ -11,7 +11,7 @@ function LNewTV() {
   useEffect(() => {
     axios
       .get(BaseUrl + "tv/popular" + key)
-      .then((response) => setNewTV(response.data.results.slice(0, 16)));
+      .then((response) => setNewTV(response.data.results.slice(0, 10)));
   }, []);
 
   return (
@@ -21,11 +21,11 @@ function LNewTV() {
           <div className="list-navigation-left">
             <h1>Phim Bộ Mới </h1>
           </div>
-          <BtnViewMore api={"/tv/popular"} />
         </div>
         <div>
           <Item array={newTV} type={"/tv"} />
         </div>
+        <BtnViewMore api={"/tv/popular"} />
       </div>
     </div>
   );

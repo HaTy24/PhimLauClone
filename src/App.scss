@@ -25,9 +25,6 @@ li {
 
 button {
   cursor: pointer;
-  &:hover {
-    background-color: #990000;
-  }
 }
 
 .App {
@@ -39,6 +36,6 @@ button {
     font-size: 14px;
   }
   .App {
-    padding: 0 30px;
+    padding: 0 15px;
   }
 }

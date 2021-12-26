@@ -11,7 +11,7 @@ function LNewRelease() {
   useEffect(() => {
     axios
       .get(BaseUrl + `${type}` + key)
-      .then((response) => setNewRelease(response.data.results.slice(0, 16)));
+      .then((response) => setNewRelease(response.data.results.slice(0, 15)));
   }, [type]);
 
   const handleGetApi = (e) => {
@@ -27,7 +27,7 @@ function LNewRelease() {
     <div className="list">
       <div className="list-navigation">
         <div className="list-navigation-left">
-          <h1>Phim Phát Hành Năm 2021</h1>
+          <h1>Phim Đề Suất</h1>
           <ul>
             <li
               id="li"

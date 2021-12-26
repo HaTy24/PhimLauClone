@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { BaseUrl, key, img_300 } from "../config";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
-
-import "./Info.scss";
 import { BtnPlay, BtnPlayList, BtnShare } from "../Button/Button";
 import Cast from "./Cast";
 import Video from "./Video";
 import Similar from "./Similar";
+
+import "./Info.scss";
 
 function Info() {
   const [detail, setDetail] = useState([]);
@@ -21,8 +21,9 @@ function Info() {
   useEffect(() => {
     axios
       .get(BaseUrl + type + "/" + id + key)
-      .then((response) => setDetail(response.data));
-  }, [type, id]);
+      .then((response) => setDetail(response.data))
+      .then(() => (document.title = "Netflix | " + name.replaceAll("-", " ")));
+  }, [type, id, name]);
 
   return (
     <>
@@ -57,8 +58,12 @@ function Info() {
             <div className="info-genres">
               <span>Thể Loại:</span>
               {detail.genres
-                ? detail.genres.slice(0, 4).map((item) => {
-                    return <span className="info-genre">{item.name}</span>;
+                ? detail.genres.slice(0, 4).map((item, i) => {
+                    return (
+                      <span key={i} className="info-genre">
+                        {item.name}
+                      </span>
+                    );
                   })
                 : null}
             </div>

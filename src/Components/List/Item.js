@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { img_300 } from "../config";
+import { img_300, unavailable } from "../config";
 import { BtnFavorite, BtnWatch } from "../Button/Button";
 
 function Item(props) {
@@ -71,7 +71,7 @@ function Item(props) {
                   ? "movie"
                   : "tv"
                 : null
-            }/${(item.name ? item.name : item.title).replaceAll(" ", "")}/${
+            }/${(item.name ? item.name : item.title).replaceAll(" ", "-")}/${
               item.id
             }`}
           >
@@ -80,7 +80,9 @@ function Item(props) {
               onClick={() => window.scroll(0, 0)}
               onMouseEnter={(e) => handleFlySpan(e, item.id)}
               style={{
-                backgroundImage: `url(${img_300}${item.poster_path})`,
+                backgroundImage: `url(${
+                  item.poster_path ? img_300 + item.poster_path : unavailable
+                })`,
               }}
             >
               <span className="list-span">HD-VIetsub</span>

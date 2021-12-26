@@ -24,6 +24,14 @@ function Trending() {
     centerPadding: "0px",
     slidesToScroll: 1,
     autoplay: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          dots: false,
+        },
+      },
+    ],
   };
 
   useEffect(() => {
@@ -62,9 +70,11 @@ function Trending() {
         <Slider {...settings}>
           {comingUp.map((item) => {
             return (
-              <Link to={`movie/${item.title.replaceAll(" ", "")}/${item.id}`}>
+              <Link
+                to={`movie/${item.title.replaceAll(" ", "")}/${item.id}`}
+                key={item.id}
+              >
                 <div
-                  key={item.id}
                   onMouseEnter={() => handleMoreInfo(item.id)}
                   onMouseLeave={handleClearInfo}
                 >
@@ -101,14 +111,20 @@ function Trending() {
           <div className="trending-nowPlaying-items">
             {nowPlaying.map((item, i) => {
               return (
-                <Link to={`movie/${item.title.replaceAll(" ", "")}/${item.id}`}>
+                <Link
+                  to={`movie/${item.title.replaceAll(" ", "")}/${item.id}`}
+                  key={i}
+                >
                   <div
-                    key={i}
                     className="trending-nowPlaying-item"
                     onClick={() => window.scroll(0, 0)}
                   >
                     <img src={`${img_300}${item.poster_path}`} alt="" />
-                    <span>{item.title}</span>
+                    <div>
+                      <span>{item.title}</span>
+                      <p>Ngày Chiếu: {item.release_date}</p>
+                      <p>IMDb: {item.vote_average}</p>
+                    </div>
                   </div>
                 </Link>
               );

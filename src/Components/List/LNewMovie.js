@@ -11,7 +11,7 @@ function LNewMovie() {
   useEffect(() => {
     axios
       .get(BaseUrl + "movie/popular" + key)
-      .then((response) => setNewMovie(response.data.results.slice(0, 16)));
+      .then((response) => setNewMovie(response.data.results.slice(0, 10)));
   }, []);
 
   return (
@@ -21,11 +21,11 @@ function LNewMovie() {
           <div className="list-navigation-left">
             <h1>Phim Lẻ Mới </h1>
           </div>
-          <BtnViewMore api={"/movie/popular"} />
         </div>
         <div>
           <Item array={newMovie} type={"/movie"}></Item>
         </div>
+        <BtnViewMore api={"/movie/popular"} />
       </div>
     </div>
   );

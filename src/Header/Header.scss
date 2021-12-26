@@ -26,31 +26,84 @@
       display: flex;
       gap: 20px;
     }
+    img {
+      width: 100px;
+      padding-right: 20px;
+      border-right: 1px solid #aaa;
+    }
   }
-  img {
-    width: 100px;
-    padding-right: 20px;
-    border-right: 1px solid #aaa;
-  }
+
   &-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    &:hover .header-form-dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+    &-drop {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
     ion-icon {
-      background-color: $third-color;
-      padding: 10px 16px;
-      margin-right: 4px;
       color: $second-color;
       font-size: 20px;
-      border-radius: 3px;
-      z-index: 99;
+      cursor: pointer;
     }
-    button {
+    &-login {
       padding: 8px 14px;
-      text-transform: uppercase;
       background-color: $second-color;
       border: none;
       border-radius: 3px;
+    }
+    &-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: $third-color;
+      border-top: 3px solid #fff;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+        top: -6%;
+        right: 0;
+      }
+    }
+    &-logout {
+      padding: 8px 14px;
+      background-color: $second-color;
+      border: none;
+      border-radius: 3px;
+      margin: 10px 10px;
+    }
+    img {
+      width: 45px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    h1 {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    h3 {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
+      cursor: pointer;
+      &:hover {
+        background-color: $four-color;
+      }
     }
   }
   &-overlay {

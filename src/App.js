@@ -17,6 +17,7 @@ function App() {
           <Route path="/:type/:name/:id" element={<Info />} />
           <Route path="/:type/:name/:id/watch" element={<WatchMovie />} />
           <Route path="/:type" element={<ViewMore />} />
+          <Route path="/:type/:page" element={<ViewMore />} />
         </Routes>
       </div>
       <Footer />

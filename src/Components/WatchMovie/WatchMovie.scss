@@ -39,6 +39,7 @@
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     gap: 5px;
     input {
+      width: 100%;
       padding: 10px;
       border: none;
     }

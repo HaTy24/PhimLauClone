@@ -1,24 +1,26 @@
 @import "../../Variable.scss";
 .list {
   padding-top: 100px;
+  position: relative;
   &-navigation {
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     &-left {
       display: flex;
-      align-items: center;
+      justify-content: start;
+      align-items: flex-start;
       gap: 20px;
-      h1 {
-        padding: 10px 20px;
-        background-color: $second-color;
-        font-size: 20px;
-        border-radius: 10px 10px 0 10px;
-      }
+      padding-bottom: 10px;
+      border-bottom: 2px solid $third-color;
+    }
+    h1 {
+      padding: 10px 20px;
+      background-color: $second-color;
+      font-size: 20px;
+      border-radius: 10px 10px 0 10px;
     }
     ul {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(5, auto);
       li {
         cursor: pointer;
         border-radius: 8px;
@@ -31,11 +33,11 @@
   }
   &-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
   }
   &-item {
-    height: 200px;
+    height: 355px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -122,7 +124,7 @@
 .active {
   background-color: $third-color;
 }
-@media screen and(max-width:1080px) {
+@media screen and(max-width:970px) {
   .list {
     &-navigation {
       &-left {
@@ -134,11 +136,35 @@
 }
 @media screen and(max-width:767px) {
   .list {
+    padding-top: 50px;
     &-navigation {
-      flex-direction: column;
       &-left {
         ul {
-          flex-direction: column;
+          grid-template-columns: repeat(3, auto);
+        }
+      }
+    }
+    &-fly {
+      display: none;
+    }
+    &-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    &-item {
+      height: 270px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .list {
+    padding-top: 50px;
+    &-navigation {
+      &-left {
+        ul {
+          grid-template-columns: repeat(2, auto);
         }
       }
     }

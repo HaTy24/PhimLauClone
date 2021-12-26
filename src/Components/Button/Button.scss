@@ -1,12 +1,21 @@
 @import "../../Variable.scss";
 .buttonViewMore {
-  color: $second-color;
-  font-weight: 700;
   border: none;
-  background-color: transparent;
+  background-color: #3c73dc;
+  padding: 5px 10px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  top: 100px;
+  right: 0;
   cursor: pointer;
+  ion-icon {
+    font-size: 20px;
+  }
   &:hover {
-    color: yellow;
+    background-color: blue;
   }
 }
 
@@ -82,5 +91,14 @@
   border: 1px solid $second-color;
   ion-icon {
     font-size: 25px;
+  }
+}
+
+@media screen and(max-width:767px) {
+  .buttonViewMore {
+    position: relative;
+    top: 30px;
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
 }

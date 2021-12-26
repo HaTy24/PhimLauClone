@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 import "./Button.scss";
 
 export const BtnViewMore = (props) => {
   return (
     <Link to={`${props.api ? props.api.split("/")[1] : null}`}>
-      <input className="buttonViewMore" type="submit" value="View more >>" />
+      <button
+        onClick={() => {
+          window.scroll(0, 0);
+        }}
+        className="buttonViewMore"
+      >
+        Xem Thêm
+        <ion-icon name="duplicate"></ion-icon>
+      </button>
     </Link>
   );
 };
@@ -29,11 +38,12 @@ export const BtnLogin = () => {
 export const BtnWatch = (props) => {
   const handleClearLocation = () => {
     window.scroll(0, 0);
+    window.title = props.name;
   };
   return (
     <Link
       to={`/${props.type ? props.type.split("/")[1] : null}/${
-        props.name ? props.name.replaceAll(" ", "") : null
+        props.name ? props.name.replaceAll(" ", "-") : null
       }/${props.id}/watch`}
     >
       <button
@@ -65,9 +75,12 @@ export const BtnFavorite = () => {
 
 export const BtnShare = () => {
   return (
-    <button className="buttonShare" type="submit">
-      <ion-icon name="logo-facebook"></ion-icon> Chia sẻ
-    </button>
+    <FacebookShareButton url={window.location.href}>
+      <button className="buttonShare" type="submit">
+        <FacebookIcon size={40} round={true} />
+        Chia sẻ
+      </button>
+    </FacebookShareButton>
   );
 };
 

@@ -11,6 +11,12 @@
   &-pagination {
     margin-top: 40px;
   }
+  &-title {
+    font-size: 30px;
+    background-color: $second-color;
+    padding: 0 8px;
+    margin-bottom: 25px;
+  }
 }
 @media screen and(max-width:767px) {
   .viewMore {
@@ -19,6 +25,10 @@
       display: block;
       background-color: red;
       margin: 10px 0;
+    }
+    &-title {
+      font-size: 20px;
+      text-align: center;
     }
   }
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BtnPlayList, BtnShare } from "../Button/Button";
 import { BaseUrl, key } from "../config";
 import "./WatchMovie.scss";
@@ -8,7 +8,9 @@ import "./WatchMovie.scss";
 function SingleMovie() {
   const location = useLocation();
   const type = location.pathname.split("/")[1];
+  const name = location.pathname.split("/")[2];
   const id = location.pathname.split("/")[3];
+  const tap = parseInt(location.search === "" ? 1 : location.search.slice(8));
   const [detail, setDetail] = useState([]);
   const [episode, setEpisode] = useState(1);
   const [season, setSeason] = useState(1);
@@ -24,7 +26,6 @@ function SingleMovie() {
             episode - 1
           ].style.backgroundColor = "red";
         }
-
         if (type !== "movie") {
           document.querySelectorAll(".season")[
             season - 1
@@ -32,6 +33,11 @@ function SingleMovie() {
         }
       });
   }, [type, id, episode, season]);
+
+  useEffect(() => {
+    document.title =
+      "Netflix | " + name.replaceAll("-", " ") + " ( Watching... )";
+  }, [name]);
 
   for (let i = 1; i <= detail.number_of_episodes; i++) {
     Episode.push(i);
@@ -63,7 +69,7 @@ function SingleMovie() {
         id="iframe"
         src={`https://www.2embed.ru/embed/tmdb/${type}?id=${id} + type === "movie"
             ? ""
-            : &s=${season}&e=${episode}`}
+            : &s=${season}&e=${tap}`}
         width="100%"
         height="500px"
         frameborder="0"
@@ -79,26 +85,30 @@ function SingleMovie() {
         </div>
       </div>
       <div className="single-season">
-        {Season.map((item) => {
+        {Season.map((item, i) => {
           return (
-            <input
-              type="button"
-              className="season"
-              value={`Phần ${item}`}
-              onClick={(e) => handleChangeSeason(e)}
-            />
+            <Link to={`?Season` + item}>
+              <input
+                type="button"
+                className="season"
+                value={`Phần ${item}`}
+                onClick={(e) => handleChangeSeason(e)}
+              />
+            </Link>
           );
         })}
       </div>
       <div className="single-episode">
         {Episode.map((item) => {
           return (
-            <input
-              type="button"
-              className="episode"
-              onClick={(e) => handleChangeEpisode(e)}
-              value={`Tập ${item}`}
-            />
+            <Link to={`?episode` + item}>
+              <input
+                type="button"
+                className="episode"
+                onClick={(e) => handleChangeEpisode(e)}
+                value={`Tập ${item}`}
+              />
+            </Link>
           );
         })}
       </div>

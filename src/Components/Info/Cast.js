@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BaseUrl, key, img_300, unavailable, noPicture } from "../config";
+import { BaseUrl, key, img_300, unavailable } from "../config";
 import Slider from "react-slick";
 import axios from "axios";
 import "./Cast.scss";
@@ -16,13 +16,13 @@ function Cast(props) {
     swipeToSlide: true,
     slidesToShow: 8,
     speed: 500,
-    slidesToScroll: 4,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 5,
+          slidesToScroll: 2,
         },
       },
     ],
@@ -38,9 +38,9 @@ function Cast(props) {
       <h2 className="trailer-title">Diễn Viên</h2>
       <Slider {...settings}>
         {cast.cast
-          ? cast.cast.slice(0, 20).map((item) => {
+          ? cast.cast.slice(0, 20).map((item, i) => {
               return (
-                <div className="cast-item">
+                <div className="cast-item" key={i}>
                   <img
                     src={
                       item.profile_path
