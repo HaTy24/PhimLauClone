@@ -27,7 +27,7 @@ function LNewRelease() {
     <div className="list">
       <div className="list-navigation">
         <div className="list-navigation-left">
-          <h1>Phim Đề Suất</h1>
+          <h1>Recommended</h1>
           <ul>
             <li
               id="li"

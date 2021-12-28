@@ -91,7 +91,7 @@ function SingleMovie() {
               <input
                 type="button"
                 className="season"
-                value={`Phần ${item}`}
+                value={`Season ${item}`}
                 onClick={(e) => handleChangeSeason(e)}
               />
             </Link>
@@ -106,7 +106,7 @@ function SingleMovie() {
                 type="button"
                 className="episode"
                 onClick={(e) => handleChangeEpisode(e)}
-                value={`Tập ${item}`}
+                value={`Episode ${item}`}
               />
             </Link>
           );

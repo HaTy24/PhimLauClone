@@ -19,7 +19,7 @@ function LNewTV() {
       <div className="list">
         <div className="list-navigation">
           <div className="list-navigation-left">
-            <h1>Phim Bộ Mới </h1>
+            <h1>New TV Series </h1>
           </div>
         </div>
         <div>

@@ -20,10 +20,11 @@ function Trending() {
     className: "slider",
     infinite: true,
     arrows: false,
-    centerMode: true,
-    centerPadding: "0px",
     slidesToScroll: 1,
     autoplay: true,
+    speed: 800,
+    autoplaySpeed: 2000,
+    fade: true,
     responsive: [
       {
         breakpoint: 767,
@@ -91,7 +92,7 @@ function Trending() {
                     <p className="trending-overview">{detail.overview}</p>
                     <div className={`trending-about ${border}`}>
                       <span className="trending-release">
-                        <label>Release</label>
+                        <label>Release Date</label>
                         {detail.release_date}
                       </span>
                       <span className="trending-vote">
@@ -122,7 +123,7 @@ function Trending() {
                     <img src={`${img_300}${item.poster_path}`} alt="" />
                     <div>
                       <span>{item.title}</span>
-                      <p>Ngày Chiếu: {item.release_date}</p>
+                      <p>Release Date: {item.release_date}</p>
                       <p>IMDb: {item.vote_average}</p>
                     </div>
                   </div>
@@ -132,7 +133,7 @@ function Trending() {
           </div>
         </div>
       </div>
-      <p className="slogan">Mang cả Hollywood vào di động của bạn!</p>
+      <p className="slogan">Bring Hollywood to your mobile!</p>
     </>
   );
 }

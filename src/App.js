@@ -6,6 +6,7 @@ import Home from "./Home";
 import Info from "./Components/Info/Info";
 import WatchMovie from "./Components/WatchMovie/WatchMovie";
 import ViewMore from "./Components/ViewMore/ViewMore";
+import Credits from "./Components/Credits/Credits";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/:type/:name/:id/watch" element={<WatchMovie />} />
           <Route path="/:type" element={<ViewMore />} />
           <Route path="/:type/:page" element={<ViewMore />} />
+          <Route path="/person/:credits" element={<Credits />} />
         </Routes>
       </div>
       <Footer />

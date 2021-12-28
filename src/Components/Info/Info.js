@@ -40,11 +40,11 @@ function Info() {
           </h1>
           <span className="info-runtime">
             {detail.runtime
-              ? hour + " giờ " + min + " phút"
+              ? hour + " hour " + min + " minute"
               : detail.number_of_episodes +
-                " tập ( " +
+                " Episodes ( " +
                 detail.number_of_seasons +
-                " phần )"}
+                " Seasons )"}
           </span>
           <div className="info-point">
             <span className="info-imdb">IMDb</span>
@@ -56,7 +56,7 @@ function Info() {
               <BtnPlayList />
             </div>
             <div className="info-genres">
-              <span>Thể Loại:</span>
+              <span>Category:</span>
               {detail.genres
                 ? detail.genres.slice(0, 4).map((item, i) => {
                     return (
@@ -69,7 +69,7 @@ function Info() {
             </div>
           </div>
           <span className="info-countries">
-            <span>Quốc Gia:</span>
+            <span>Country:</span>
             {detail.production_countries
               ? detail.production_countries.map((item) => {
                   return item.name;
@@ -77,7 +77,7 @@ function Info() {
               : null}
           </span>
           <span className="info-releasedate">
-            <span>Khởi Chiếu:</span>
+            <span>Release Date:</span>
             {detail.release_date ? detail.release_date : detail.first_air_date}
           </span>
           <p className="info-overview">{detail.overview}</p>

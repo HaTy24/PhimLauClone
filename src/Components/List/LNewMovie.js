@@ -19,7 +19,7 @@ function LNewMovie() {
       <div className="list">
         <div className="list-navigation">
           <div className="list-navigation-left">
-            <h1>Phim Lẻ Mới </h1>
+            <h1>New Movies </h1>
           </div>
         </div>
         <div>

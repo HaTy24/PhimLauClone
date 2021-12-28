@@ -37,10 +37,6 @@ function Header() {
     window.scroll(0, 0);
   };
 
-  const handleFailure = (result) => {
-    alert(result);
-  };
-
   const handleLogin = (googleData) => {
     setEmail(googleData.profileObj);
   };
@@ -63,19 +59,19 @@ function Header() {
         </Link>
         <ul>
           <li className="home" onClick={handleScroll}>
-            <Link to="/">Trang chủ</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className="movie" onClick={handleScroll}>
-            <Link to="/movie">Phim lẻ</Link>
+            <Link to="/movie">Movies</Link>
           </li>
           <li className="tv" onClick={handleScroll}>
-            <Link to="/tv">Phim bộ</Link>
+            <Link to="/tv">TV Series</Link>
           </li>
           <li onClick={handleScroll}>
-            <Link to="/">Quốc gia</Link>
+            <Link to="/">Country</Link>
           </li>
           <li onClick={handleScroll}>
-            <Link to="/">Năm phát hành</Link>
+            <Link to="/">Release Year</Link>
           </li>
         </ul>
       </div>
@@ -90,12 +86,11 @@ function Header() {
                   onClick={renderProps.onClick}
                   disabled={renderProps.disabled}
                 >
-                  Đăng nhập
+                  Login
                 </button>
               )}
               buttonText="Login"
               onSuccess={handleLogin}
-              onFailure={handleFailure}
               cookiePolicy={"single_host_origin"}
             />
           ) : (
@@ -107,13 +102,13 @@ function Header() {
               </div>
               <div class="header-form-dropdown">
                 <h3>
-                  <ion-icon name="person-circle-outline"></ion-icon>Tài Khoản
+                  <ion-icon name="person-circle-outline"></ion-icon>Account
                 </h3>
                 <h3>
                   <ion-icon name="logo-bitcoin"></ion-icon>Donate
                 </h3>
                 <h3>
-                  <ion-icon name="albums"></ion-icon>Bộ sưu tập
+                  <ion-icon name="albums"></ion-icon>Playlist
                 </h3>
                 <h3>{email.email}</h3>
 
@@ -125,7 +120,7 @@ function Header() {
                       onClick={renderProps.onClick}
                       disabled={renderProps.disabled}
                     >
-                      Thoát
+                      Logout
                     </button>
                   )}
                   buttonText="Logout"

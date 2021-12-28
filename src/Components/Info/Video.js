@@ -33,12 +33,32 @@ function Video(props) {
 
   const settings = {
     className: "trailer-slider",
-    dots: false,
-    infinite: false,
+    autoplaySpeed: 1000,
+    dots: true,
+    arrows: false,
+    infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    centerMode: true,
+    centerPadding: "110px",
     swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1080,
+        settings: {
+          slidesToShow: 2,
+          centerPadding: "40px",
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "30px",
+        },
+      },
+    ],
   };
+
   return (
     <div className="trailer">
       <h2 className="trailer-title">Trailer</h2>

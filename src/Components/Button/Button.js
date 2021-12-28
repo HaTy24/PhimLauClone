@@ -12,7 +12,7 @@ export const BtnViewMore = (props) => {
         }}
         className="buttonViewMore"
       >
-        Xem Thêm
+        View More
         <ion-icon name="duplicate"></ion-icon>
       </button>
     </Link>
@@ -60,7 +60,7 @@ export const BtnWatch = (props) => {
 export const BtnPlay = () => {
   return (
     <button onClick={() => window.scroll(0, 0)} className="buttonPlay">
-      <ion-icon name="play"></ion-icon> Xem Phim
+      <ion-icon name="play"></ion-icon> Watch Movie
     </button>
   );
 };
@@ -78,7 +78,7 @@ export const BtnShare = () => {
     <FacebookShareButton url={window.location.href}>
       <button className="buttonShare" type="submit">
         <FacebookIcon size={40} round={true} />
-        Chia sẻ
+        Share
       </button>
     </FacebookShareButton>
   );
@@ -87,7 +87,7 @@ export const BtnShare = () => {
 export const BtnPlayList = () => {
   return (
     <button className="buttonPlayList" type="submit">
-      <ion-icon name="add"></ion-icon> Bộ Sưu Tập
+      <ion-icon name="add"></ion-icon> Playlist
     </button>
   );
 };

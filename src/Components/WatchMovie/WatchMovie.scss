@@ -26,23 +26,22 @@
     border-radius: 5px;
   }
   &-season {
-    display: flex;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 5px;
     margin: 20px 0;
-    input {
-      padding: 10px;
-      border: none;
-    }
   }
   &-episode {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     gap: 5px;
-    input {
-      width: 100%;
-      padding: 10px;
-      border: none;
-    }
+    margin-bottom: 50px;
+  }
+  input {
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border: none;
   }
 }
 

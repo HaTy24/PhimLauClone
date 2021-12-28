@@ -104,7 +104,9 @@ function Item(props) {
           {detail.title ? detail.title : detail.name}
         </h1>
         <div className="list-fly-group">
-          <span className="list-fly-imdb">IMDb: {detail.vote_average}</span>
+          <span className="list-fly-imdb">
+            IMDb: {detail.vote_average ? detail.vote_average.toFixed(1) : null}
+          </span>
           <span className="list-fly-release">{detail.release_date}</span>
         </div>
         <p className="list-fly-overview">{detail.overview}</p>

@@ -14,7 +14,7 @@ function Similar(props) {
 
   return (
     <div className="similar">
-      <h1 className="trailer-title">Phim Tương Tự</h1>
+      <h1 className="trailer-title">Similar</h1>
       <Item array={similar} type={"/" + props.type} />
     </div>
   );

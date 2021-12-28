@@ -1,7 +1,7 @@
 @import "../../Variable.scss";
 .buttonViewMore {
   border: none;
-  background-color: #3c73dc;
+  background-color: $five-color;
   padding: 5px 10px;
   border-radius: 2px;
   display: flex;
@@ -65,7 +65,7 @@
 }
 
 .buttonShare {
-  background-color: #3c73dc;
+  background-color: $five-color;
   padding: 8px;
   border-radius: 5px;
   display: flex;

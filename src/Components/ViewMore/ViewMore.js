@@ -76,7 +76,7 @@ function ViewMore() {
       .then((response) => setViewMore(response.data.results))
       .then(() => {
         document.title =
-          pathName === "movie" ? "Netflix | PHIM LẺ" : "Netflix | PHIM BỘ";
+          pathName === "movie" ? "Netflix | MOVIES" : "Netflix | TV SERIES";
       });
   }, [pathName, initState]);
 
@@ -91,7 +91,7 @@ function ViewMore() {
   return (
     <div className="viewMore">
       <h1 className="viewMore-title">
-        {pathName === "movie" ? "Phim lẻ" : "Phim bộ"}
+        {pathName === "movie" ? "Movies" : "TV Series"}
       </h1>
       <Item array={viewMore} type={`/${pathName}`} />
       <div className="viewMore-pagination">
