@@ -11,8 +11,6 @@
 }
 body {
   background-color: $main-color;
-  width: 100%;
-  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -27,15 +25,8 @@ button {
   cursor: pointer;
 }
 
-.App {
-  padding: 0 50px;
-}
-
 @media screen and (max-width: 768px) {
   body {
     font-size: 14px;
-  }
-  .App {
-    padding: 0 15px;
   }
 }

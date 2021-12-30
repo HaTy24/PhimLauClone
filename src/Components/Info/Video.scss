@@ -2,10 +2,17 @@
 
 .trailer {
   margin-top: 50px;
+  padding: 0 50px;
   &-title {
     font-size: 25px;
     color: $second-color;
     margin-bottom: 15px;
+  }
+  &-items {
+    display: flex;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+    gap: 15px;
   }
   span {
     display: block;
@@ -18,13 +25,13 @@
     position: relative;
     cursor: pointer;
     text-align: center;
-    overflow: hidden;
     height: 110px;
     &:hover {
       border: 1px solid orange;
     }
   }
   &-name {
+    width: 250px;
     color: $second-color;
     font-weight: 700;
   }
@@ -40,6 +47,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    border-radius: 0 8px 0 0;
   }
   &-iframe {
     width: 100%;
@@ -76,6 +84,7 @@
 
 @media screen and(max-width:767px) {
   .trailer {
+    padding: 0 20px;
     &-iframe {
       height: 315px;
     }
@@ -89,6 +98,12 @@
     &-official {
       width: 90px;
       font-size: 12px;
+    }
+    &-item {
+      height: 80px;
+    }
+    &-name {
+      width: 200px;
     }
   }
 }

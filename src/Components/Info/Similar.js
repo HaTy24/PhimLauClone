@@ -9,7 +9,7 @@ function Similar(props) {
   useEffect(() => {
     axios
       .get(BaseUrl + props.type + "/" + props.id + "/similar" + key)
-      .then((response) => setSimilar(response.data.results.slice(0, 15)));
+      .then((response) => setSimilar(response.data.results.slice(0, 10)));
   }, [props.id, props.type]);
 
   return (

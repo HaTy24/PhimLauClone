@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Item from "../List/Item";
 import "./ViewMore.scss";
 
-function ViewMore() {
+function ViewMore({ dataSearch }) {
   //InitState
   //Actions
   const First_Page = "first";
@@ -93,7 +93,7 @@ function ViewMore() {
       <h1 className="viewMore-title">
         {pathName === "movie" ? "Movies" : "TV Series"}
       </h1>
-      <Item array={viewMore} type={`/${pathName}`} />
+      <Item array={viewMore} type={`/${pathName}`} dataSearch={dataSearch} />
       <div className="viewMore-pagination">
         <Link to={`?page1`}>
           <input

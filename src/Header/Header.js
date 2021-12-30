@@ -3,9 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import "./Header.scss";
+import { BtnSearch } from "../Components/Button/Button";
+import axios from "axios";
+import { BaseUrl, key } from "../Components/config";
 
-function Header() {
+function Header({ Search }) {
   const [email, setEmail] = useState({});
+  const [search, setSearch] = useState("");
   const location = useLocation();
   const handleToggle = () => {
     document.querySelector("ul").classList.toggle("active");
@@ -23,6 +27,8 @@ function Header() {
       document.querySelector(".movie").style.color = "red";
     } else if (location.pathname.slice(0, 3) === "/tv") {
       document.querySelector(".tv").style.color = "red";
+    } else {
+      document.querySelector(".tim").style.color = "red";
     }
   }, [location.pathname]);
 
@@ -37,12 +43,20 @@ function Header() {
     window.scroll(0, 0);
   };
 
+  window.addEventListener("scroll", toggleHeader);
+  function toggleHeader() {
+    const header = document.querySelector(".header");
+    window.scrollY >= 100
+      ? (header.style.backgroundColor = "#212121")
+      : (header.style.backgroundColor = "transparent");
+  }
   const handleLogin = (googleData) => {
     setEmail(googleData.profileObj);
   };
   const handleLogout = () => {
     setEmail({});
   };
+
   return (
     <div className="header">
       <div className="header-left">
@@ -67,12 +81,12 @@ function Header() {
           <li className="tv" onClick={handleScroll}>
             <Link to="/tv">TV Series</Link>
           </li>
-          <li onClick={handleScroll}>
-            <Link to="/">Country</Link>
+          <li className="tim" onClick={handleScroll}>
+            <Link to="/search">Search</Link>
           </li>
-          <li onClick={handleScroll}>
+          {/* <li onClick={handleScroll}>
             <Link to="/">Release Year</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="header-right">

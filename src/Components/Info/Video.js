@@ -62,24 +62,22 @@ function Video(props) {
   return (
     <div className="trailer">
       <h2 className="trailer-title">Trailer</h2>
-      <div>
-        <Slider {...settings}>
-          {video.map((item, i) => {
-            return (
-              <div
-                key={i}
-                className="trailer-item"
-                onClick={() => handleClickOpen(item.key, item.name)}
-              >
-                <span className="trailer-name">Trailer: {item.name}</span>
-                <span className="trailer-type">Type: {item.type}</span>
-                <span className="trailer-official">
-                  {item.official === true ? "Official Trailer" : ""}
-                </span>
-              </div>
-            );
-          })}
-        </Slider>
+      <div className="trailer-items">
+        {video.map((item, i) => {
+          return (
+            <div
+              key={i}
+              className="trailer-item"
+              onClick={() => handleClickOpen(item.key, item.name)}
+            >
+              <span className="trailer-name">Trailer: {item.name}</span>
+              <span className="trailer-type">Type: {item.type}</span>
+              <span className="trailer-official">
+                {item.official === true ? "Official Trailer" : ""}
+              </span>
+            </div>
+          );
+        })}
       </div>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth>
         <DialogTitle style={{ color: "red", textTransform: "uppercase" }}>

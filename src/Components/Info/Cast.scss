@@ -1,22 +1,28 @@
 @import "../../Variable.scss";
 .cast {
-  margin-top: 50px;
+  margin-top: 230px;
+  padding: 0 50px;
+  &-items {
+    overflow-y: scroll;
+    display: flex;
+    gap: 15px;
+    padding-bottom: 10px;
+  }
   &-item {
     cursor: pointer;
+    height: 80%;
     border-radius: 8px;
-    &:hover img {
-      border: 1px solid orange;
+    transition: all 0.2s linear;
+    &:hover {
+      transform: scale(1.17);
+    }
+    img {
+      width: 150px;
+      border-radius: 8px 8px 0 0;
     }
   }
   h3 {
     text-align: center;
-  }
-  img {
-    transition: all 0.2s ease-in-out;
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px;
   }
   span {
     display: block;
@@ -67,18 +73,25 @@
       h3 {
         font-size: 14px;
       }
+      img {
+        width: 120px;
+      }
     }
   }
 }
 
 @media screen and(max-width:767px) {
   .cast {
+    padding: 0 20px;
     &-item {
       h3 {
         font-size: 10px;
       }
       span {
         font-size: 8px;
+      }
+      img {
+        width: 90px;
       }
     }
   }

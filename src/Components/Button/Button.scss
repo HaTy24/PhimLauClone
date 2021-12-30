@@ -21,10 +21,14 @@
 
 .buttonWatchNow {
   background-color: $second-color;
-  padding: 10px 20px;
-  margin-top: 20px;
+  padding: 20px 40px;
+  margin-top: 40px;
   border: none;
+  font-size: 30px;
   border-radius: 5px;
+  &:hover {
+    background-color: #940303;
+  }
 }
 
 .buttonLogin {
@@ -91,6 +95,20 @@
   border: 1px solid $second-color;
   ion-icon {
     font-size: 25px;
+  }
+}
+
+.buttonSearch {
+  background-color: $second-color;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+@media screen and(max-width:1024px) {
+  .buttonWatchNow {
+    font-size: 20px;
+    padding: 10px 20px;
   }
 }
 

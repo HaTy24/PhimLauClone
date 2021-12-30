@@ -14,7 +14,7 @@ function Home() {
   }, [location]);
 
   return (
-    <div style={{ paddingBottom: "50px" }}>
+    <div className="home">
       <ComingUp />
       <LNewRelease />
       <LNewMovie />

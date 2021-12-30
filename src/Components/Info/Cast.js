@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BaseUrl, key, img_300, unavailable } from "../config";
-import Slider from "react-slick";
+import { BaseUrl, key, img_500, unavailable } from "../config";
 import axios from "axios";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -12,31 +11,7 @@ function Cast(props) {
   const [cast, setCast] = useState([]);
   const [open, setOpen] = useState(false);
   const [credit, setCredit] = useState({});
-  const settings = {
-    className: "cast-slider",
-    arrows: false,
-    infinite: true,
-    slidesToShow: 6,
-    centerMode: true,
-    centerPadding: "110px",
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1080,
-        settings: {
-          slidesToShow: 4,
-          centerPadding: "70px",
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 3,
-          centerPadding: "40px",
-        },
-      },
-    ],
-  };
+
   useEffect(() => {
     axios
       .get(BaseUrl + props.type + "/" + props.id + "/credits" + key)
@@ -62,22 +37,19 @@ function Cast(props) {
   return (
     <div className="cast">
       <h2 className="trailer-title">Cast</h2>
-      <span style={{ marginBottom: "20px", color: "#aaa" }}>
-        Double click to view more...
-      </span>
-      <Slider {...settings}>
+      <div className="cast-items">
         {cast.cast
-          ? cast.cast.slice(0, 20).map((item, i) => {
+          ? cast.cast.map((item, i) => {
               return (
                 <div
                   className="cast-item"
                   key={i}
-                  onDoubleClick={() => handleClickOpen(item.credit_id)}
+                  onClick={() => handleClickOpen(item.credit_id)}
                 >
                   <img
                     src={
                       item.profile_path
-                        ? img_300 + item.profile_path
+                        ? img_500 + item.profile_path
                         : unavailable
                     }
                     alt=""
@@ -88,19 +60,20 @@ function Cast(props) {
               );
             })
           : null}
-      </Slider>
+      </div>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth>
         <DialogTitle
           style={{
             color: "red",
             textTransform: "uppercase",
+            backgroundColor: "#ddd",
             display: "flex",
             gap: "20px",
           }}
         >
           <img
             style={{ width: "100px" }}
-            src={img_300 + credit.profile_path}
+            src={img_500 + credit.profile_path}
             alt=""
           />
           {credit.name}
@@ -127,7 +100,7 @@ function Cast(props) {
                           {item.title ? item.title : item.name}
                         </h2>
                         <img
-                          src={img_300 + item.poster_path}
+                          src={img_500 + item.poster_path}
                           alt={item.title}
                         />
                         <span className="credit-overview">{item.overview}</span>

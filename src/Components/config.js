@@ -5,8 +5,8 @@ export const BaseUrl = "https://api.themoviedb.org/3/";
 export const key = "?api_key=05a2f1d12401e46de40b441e5576e684";
 
 //image sizes for tmdb
-export const img_300 = "https://image.tmdb.org/t/p/w300";
-export const img_500 = "https://image.tmdb.org/t/p/w500";
+export const img_original = "https://image.tmdb.org/t/p/original/";
+export const img_500 = "https://image.tmdb.org/t/p/w500/";
 
 // contentModal and singleContent
 export const unavailable =

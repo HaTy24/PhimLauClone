@@ -2,6 +2,7 @@
 .single {
   padding-top: 70px;
   &-title {
+    padding: 0 50px;
     margin-top: 30px;
     display: flex;
     align-items: center;
@@ -26,16 +27,18 @@
     border-radius: 5px;
   }
   &-season {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
+    margin: 30px 50px;
+    display: flex;
+    overflow-y: scroll;
+    padding-bottom: 10px;
     gap: 5px;
-    margin: 20px 0;
   }
   &-episode {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-    gap: 5px;
-    margin-bottom: 50px;
+    margin: 0 50px 50px;
+    display: flex;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+    gap: 8px;
   }
   input {
     cursor: pointer;
@@ -55,6 +58,12 @@
     }
     &-button {
       margin-top: 20px;
+    }
+    &-season {
+      margin: 30px 20px;
+    }
+    &-episode {
+      margin: 0 20px 50px;
     }
   }
 }

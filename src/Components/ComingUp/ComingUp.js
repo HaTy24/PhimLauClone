@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { img_300, img_500, BaseUrl, key } from "../config";
+import { img_500, BaseUrl, key, img_original } from "../config";
 
 import "./ComingUp.scss";
 import axios from "axios";
@@ -12,19 +12,15 @@ import { BtnWatchNow } from "../Button/Button";
 function Trending() {
   const [comingUp, setComingUp] = useState([]);
   const [nowPlaying, setNowPlaying] = useState([]);
-  const [detail, setDetail] = useState([]);
-  const [hover, setHover] = useState("");
-  const [border, setBorder] = useState("");
   const settings = {
-    dots: true,
     className: "slider",
     infinite: true,
     arrows: false,
     slidesToScroll: 1,
     autoplay: true,
+    pauseOnHover: false,
     speed: 800,
-    autoplaySpeed: 2000,
-    fade: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 767,
@@ -52,58 +48,32 @@ function Trending() {
       .get(`${BaseUrl}movie/now_playing${key}`)
       .then((response) => setNowPlaying(response.data.results));
   }, []);
-  const handleMoreInfo = (id) => {
-    comingUp.forEach((item) => {
-      if (item.id === id) {
-        setDetail(item);
-      }
-    });
-    setHover("display");
-    setBorder("border");
-  };
-  const handleClearInfo = () => {
-    setDetail([]);
-    setHover("");
-  };
+
   return (
     <>
       <div className="trending">
         <Slider {...settings}>
           {comingUp.map((item) => {
             return (
-              <Link
-                to={`movie/${item.title.replaceAll(" ", "")}/${item.id}`}
-                key={item.id}
-              >
+              <div>
                 <div
-                  onMouseEnter={() => handleMoreInfo(item.id)}
-                  onMouseLeave={handleClearInfo}
+                  className="trending-top"
+                  style={{
+                    backgroundImage: `url(${
+                      img_original + item.backdrop_path
+                    })`,
+                  }}
                 >
-                  <img
-                    src={`${img_500}${
-                      item.backdrop_path ? item.backdrop_path : item.poster_path
-                    }`}
-                    alt=""
-                  />
-                  <div className={`trending-moreInfo ${hover}`}>
+                  <div className="trending-moreInfo">
                     <h1 className="trending-name">
-                      {detail.title ? detail.title : detail.original_title}
+                      {item.title ? item.title : item.original_title}
                     </h1>
-                    <p className="trending-overview">{detail.overview}</p>
-                    <div className={`trending-about ${border}`}>
-                      <span className="trending-release">
-                        <label>Release Date</label>
-                        {detail.release_date}
-                      </span>
-                      <span className="trending-vote">
-                        <label>IMDb</label>
-                        {detail.vote_average}
-                      </span>
-                    </div>
-                    <BtnWatchNow />
+                    <p className="trending-overview">{item.overview}</p>
+                    <BtnWatchNow type="movie" name={item.title} id={item.id} />
                   </div>
+                  <img src={`${img_500}${item.poster_path}`} alt="" />
                 </div>
-              </Link>
+              </div>
             );
           })}
         </Slider>
@@ -120,7 +90,7 @@ function Trending() {
                     className="trending-nowPlaying-item"
                     onClick={() => window.scroll(0, 0)}
                   >
-                    <img src={`${img_300}${item.poster_path}`} alt="" />
+                    <img src={`${img_500}${item.poster_path}`} alt="" />
                     <div>
                       <span>{item.title}</span>
                       <p>Release Date: {item.release_date}</p>

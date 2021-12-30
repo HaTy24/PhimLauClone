@@ -19,11 +19,13 @@ export const BtnViewMore = (props) => {
   );
 };
 
-export const BtnWatchNow = () => {
+export const BtnWatchNow = (props) => {
   return (
-    <button type="submit" className="buttonWatchNow">
-      Watching Now
-    </button>
+    <Link to={`/${props.type}/${props.name}/${props.id}`}>
+      <button type="submit" className="buttonWatchNow">
+        Watching Now
+      </button>
+    </Link>
   );
 };
 
@@ -88,6 +90,17 @@ export const BtnPlayList = () => {
   return (
     <button className="buttonPlayList" type="submit">
       <ion-icon name="add"></ion-icon> Playlist
+    </button>
+  );
+};
+
+export const BtnSearch = ({ handleS }) => {
+  const handleSearch = () => {
+    handleS();
+  };
+  return (
+    <button onClick={handleSearch} className="buttonSearch" type="submit">
+      Tìm Kiếm
     </button>
   );
 };

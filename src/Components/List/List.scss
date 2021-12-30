@@ -1,6 +1,7 @@
 @import "../../Variable.scss";
 .list {
   padding-top: 100px;
+  margin: 0 50px;
   position: relative;
   &-navigation {
     margin-bottom: 20px;
@@ -126,6 +127,7 @@
 }
 @media screen and(max-width:970px) {
   .list {
+    margin: 0 30px;
     &-navigation {
       &-left {
         flex-direction: column;
@@ -136,6 +138,7 @@
 }
 @media screen and(max-width:767px) {
   .list {
+    margin: 0 20px;
     padding-top: 50px;
     &-navigation {
       &-left {

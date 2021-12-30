@@ -7,18 +7,26 @@
   position: fixed;
   z-index: 999;
   width: 100%;
-  background-color: $header-color;
+  background-color: transparent;
   &-left {
     display: flex;
     align-items: center;
     gap: 20px;
     text-transform: uppercase;
     a {
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      gap: 5px;
+      align-items: center;
       &:hover {
         color: $second-color;
       }
+      &:hover ion-icon {
+        color: $second-color;
+      }
     }
-    ion-icon {
+    ion-icon[name="menu"] {
       display: none;
       font-size: 40px;
     }
@@ -108,7 +116,7 @@
   }
   &-overlay {
     position: fixed;
-    background-color: rgba($color: #000000, $alpha: 0.7);
+    background-color: rgba($color: #000000, $alpha: 0.9);
     inset: 0;
     z-index: -1;
     opacity: 0;
@@ -119,29 +127,29 @@
   opacity: 1;
   visibility: visible;
 }
-@media screen and(max-width:1080px) {
+@media screen and(max-width:767px) {
   .header {
     width: 100%;
+    padding: 7px 20px;
     &-left {
-      ion-icon {
+      ion-icon[name="menu"] {
         display: block;
       }
       ul {
         position: absolute;
-        transform: translateX(-100%);
+        transform: translateX(-150%);
         transition: all 0.2s linear;
         flex-direction: column;
-        text-align: center;
-        background-color: $four-color;
+        background-color: transparent;
         top: 100%;
-        left: 0;
-        width: 50%;
-        gap: 5px;
+        gap: 50px;
         height: 100vh;
         li {
-          border-bottom: 1px solid $third-color;
           width: 100%;
-          padding: 20px 0;
+          border-bottom: 1px solid $third-color;
+          &:first-child {
+            padding-top: 50px;
+          }
         }
       }
       .active {

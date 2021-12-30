@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { img_300, unavailable } from "../config";
+import { img_500, unavailable } from "../config";
 import { BtnFavorite, BtnWatch } from "../Button/Button";
 
 function Item(props) {
@@ -81,7 +81,7 @@ function Item(props) {
               onMouseEnter={(e) => handleFlySpan(e, item.id)}
               style={{
                 backgroundImage: `url(${
-                  item.poster_path ? img_300 + item.poster_path : unavailable
+                  item.poster_path ? img_500 + item.poster_path : unavailable
                 })`,
               }}
             >
