@@ -25,6 +25,8 @@ function Header({ Search }) {
       document.querySelector(".tv").style.color = "red";
     } else if (location.pathname.slice(0, 7) === "/search") {
       document.querySelector(".tim").style.color = "red";
+    } else {
+      document.querySelector(".listt").style.color = "red";
     }
   }, [location.pathname]);
 
@@ -84,9 +86,9 @@ function Header({ Search }) {
           <li className="tim" onClick={handleScroll}>
             <Link to="/search">Search</Link>
           </li>
-          {/* <li onClick={handleScroll}>
-            <Link to="/">Release Year</Link>
-          </li> */}
+          <li className="listt" onClick={handleScroll}>
+            <Link to="/playlist">Playlist</Link>
+          </li>
         </ul>
       </div>
       <div className="header-right">
@@ -121,11 +123,9 @@ function Header({ Search }) {
                 <h3>
                   <ion-icon name="logo-bitcoin"></ion-icon>Donate
                 </h3>
-                <Link to="playlist">
-                  <h3>
-                    <ion-icon name="albums"></ion-icon>Playlist
-                  </h3>
-                </Link>
+                <h3>
+                  <ion-icon name="albums"></ion-icon>Playlist
+                </h3>
                 <h3>{email.email}</h3>
 
                 <GoogleLogout

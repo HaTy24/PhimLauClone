@@ -17,13 +17,13 @@
     &:hover {
       background-color: $third-color;
     }
-    ion-icon {
-      font-size: 35px;
-    }
     img {
       width: 60px;
       // border-radius: 20px;
     }
+  }
+  ion-icon {
+    font-size: 35px;
   }
   &-name {
     width: 100%;
@@ -40,14 +40,30 @@
 
 @media screen and(max-width:970px) {
   .playlist {
+    margin: 0 30px;
     &-item {
       width: 100%;
+      gap: 20px;
     }
   }
 }
 
 @media screen and (max-width: 540px) {
   .playlist {
+    margin: 0 20px;
+    &-item {
+      width: 100%;
+      gap: 15px;
+      padding: 10px 0;
+    }
+    ion-icon {
+      font-size: 25px;
+    }
+    &-name {
+      ion-icon {
+        display: none;
+      }
+    }
     &-empty {
       font-size: 35px;
     }
