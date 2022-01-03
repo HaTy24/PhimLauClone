@@ -25,7 +25,6 @@
     position: relative;
     cursor: pointer;
     text-align: center;
-    height: 110px;
     &:hover {
       border: 1px solid orange;
     }
@@ -98,9 +97,6 @@
     &-official {
       width: 90px;
       font-size: 12px;
-    }
-    &-item {
-      height: 80px;
     }
     &-name {
       width: 200px;

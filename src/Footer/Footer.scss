@@ -6,9 +6,6 @@
   align-items: center;
   background-color: $header-color;
   padding: 50px;
-  &-left {
-    width: 50%;
-  }
   &-title {
     font-size: 25px;
     color: $second-color;
@@ -33,7 +30,7 @@
     }
     ion-icon {
       font-size: 100px;
-      color: #000;
+      color: yellow;
     }
     h2 {
       font-size: 40px;
@@ -49,20 +46,19 @@
       font-size: 35px;
       margin-left: 20px;
       cursor: pointer;
+      transition: all 0.3s linear;
       &:hover {
-        color: $second-color;
+        color: $five-color;
       }
     }
   }
 }
 
-@media screen and(max-width:1080px) {
+@media screen and(max-width:900px) {
   .footer {
-    display: block;
+    flex-direction: column;
     text-align: center;
     margin-top: 0;
-    &-left {
-      width: 100%;
-    }
+    padding: 50px 20px;
   }
 }

@@ -18,3 +18,21 @@
     }
   }
 }
+
+@media screen and (max-width: 970px) {
+  .search {
+    padding: 100px 30px 30px;
+    input {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search {
+    padding: 100px 20px 20px;
+    input {
+      width: 70%;
+    }
+  }
+}

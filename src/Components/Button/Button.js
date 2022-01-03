@@ -86,9 +86,24 @@ export const BtnShare = () => {
   );
 };
 
-export const BtnPlayList = () => {
+export const BtnPlayList = (props) => {
+  const key = props.id;
+  const Storage = () => {
+    const obj = {
+      id: props.id,
+      name: props.name,
+      img: props.img,
+      type: props.type,
+    };
+    const setjson = JSON.stringify(obj);
+    localStorage.setItem(key, setjson);
+    const playList = document.querySelector(".buttonPlayList");
+    playList.innerHTML = "Added Playlist ";
+    playList.style.border = "1px solid green";
+    playList.disabled = true;
+  };
   return (
-    <button className="buttonPlayList" type="submit">
+    <button className="buttonPlayList" type="submit" onClick={Storage}>
       <ion-icon name="add"></ion-icon> Playlist
     </button>
   );
@@ -101,6 +116,22 @@ export const BtnSearch = ({ handleS }) => {
   return (
     <button onClick={handleSearch} className="buttonSearch" type="submit">
       Tìm Kiếm
+    </button>
+  );
+};
+
+export const BtnClearPlaylist = ({ reload }) => {
+  const handleClearPLaylist = () => {
+    localStorage.clear();
+    reload(Math.floor(Math.random()));
+  };
+  return (
+    <button
+      type="submit"
+      className="buttonClearPLaylist"
+      onClick={handleClearPLaylist}
+    >
+      Clear All Playlist
     </button>
   );
 };

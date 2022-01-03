@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { img_500, unavailable } from "../config";
 import { BtnFavorite, BtnWatch } from "../Button/Button";

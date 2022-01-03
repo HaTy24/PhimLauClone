@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BaseUrl, key, img_300, img_500, img_original } from "../config";
+import { BaseUrl, key, img_500, img_original } from "../config";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { BtnPlay, BtnPlayList, BtnShare } from "../Button/Button";
@@ -17,6 +17,7 @@ function Info() {
   const type = location.pathname.split("/")[1];
   const name = location.pathname.split("/")[2];
   const id = location.pathname.split("/")[3];
+  const storage = [];
 
   useEffect(() => {
     axios
@@ -25,6 +26,25 @@ function Info() {
       .then(() => (document.title = "Netflix | " + name.replaceAll("-", " ")));
   }, [type, id, name]);
 
+  useEffect(() => {
+    for (var i = 0, len = localStorage.length; i < len; ++i) {
+      storage.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+    }
+    const playList = document.querySelector(".buttonPlayList");
+    const check = storage.some((i) => {
+      return i.id === parseInt(id);
+    });
+
+    if (check === true) {
+      playList.innerHTML = "Added Playlist ";
+      playList.style.border = "1px solid green";
+      playList.disabled = true;
+    } else {
+      playList.style.border = "1px solid red";
+      playList.innerHTML = '<ion-icon name="add"></ion-icon> Playlist';
+      playList.disabled = false;
+    }
+  });
   return (
     <div>
       <div
@@ -59,7 +79,12 @@ function Info() {
             <div className="info-button">
               <div style={{ display: "flex", gap: "15px" }}>
                 <BtnShare />
-                <BtnPlayList />
+                <BtnPlayList
+                  id={detail.id}
+                  name={detail.title ? detail.title : detail.name}
+                  img={detail.poster_path}
+                  type={type}
+                />
               </div>
               <div className="info-genres">
                 <span>Category:</span>

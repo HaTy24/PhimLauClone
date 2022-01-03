@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { BaseUrl, key } from "../config";
+import React, { useContext } from "react";
 import { BtnViewMore } from "../Button/Button";
 import "./List.scss";
 import Item from "./Item";
+import { LocalState } from "../../Context/DetailAPI";
 
 function LNewMovie() {
-  const [newMovie, setNewMovie] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(BaseUrl + "movie/popular" + key)
-      .then((response) => setNewMovie(response.data.results.slice(0, 10)));
-  }, []);
+  const Value = useContext(LocalState);
 
   return (
     <div>
@@ -23,7 +16,7 @@ function LNewMovie() {
           </div>
         </div>
         <div>
-          <Item array={newMovie} type={"/movie"}></Item>
+          <Item array={Value.newMovie.slice(0, 10)} type={"/movie"}></Item>
         </div>
         <BtnViewMore api={"/movie/popular"} />
       </div>

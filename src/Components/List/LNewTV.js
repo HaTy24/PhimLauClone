@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { BaseUrl, key } from "../config";
+import React, { useContext } from "react";
 import { BtnViewMore } from "../Button/Button";
 import "./List.scss";
 import Item from "./Item";
+import { LocalState } from "../../Context/DetailAPI";
 
 function LNewTV() {
-  const [newTV, setNewTV] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(BaseUrl + "tv/popular" + key)
-      .then((response) => setNewTV(response.data.results.slice(0, 10)));
-  }, []);
+  const Value = useContext(LocalState);
 
   return (
     <div>
@@ -23,7 +16,7 @@ function LNewTV() {
           </div>
         </div>
         <div>
-          <Item array={newTV} type={"/tv"} />
+          <Item array={Value.newTV.slice(0, 10)} type={"/tv"} />
         </div>
         <BtnViewMore api={"/tv/popular"} />
       </div>

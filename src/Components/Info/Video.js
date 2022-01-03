@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import { BaseUrl, key } from "../config";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.scss";
-import "slick-carousel/slick/slick-theme.scss";
 import "./Video.scss";
 
 function Video(props) {
@@ -29,34 +26,6 @@ function Video(props) {
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const settings = {
-    className: "trailer-slider",
-    autoplaySpeed: 1000,
-    dots: true,
-    arrows: false,
-    infinite: true,
-    slidesToShow: 3,
-    centerMode: true,
-    centerPadding: "110px",
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1080,
-        settings: {
-          slidesToShow: 2,
-          centerPadding: "40px",
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          centerPadding: "30px",
-        },
-      },
-    ],
   };
 
   return (

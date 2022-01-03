@@ -90,6 +90,7 @@
   display: flex;
   align-items: center;
   width: 150px;
+  height: 57px;
   justify-content: center;
   gap: 10px;
   border: 1px solid $second-color;
@@ -103,6 +104,16 @@
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+.buttonClearPLaylist {
+  background-color: $second-color;
+  padding: 5px 10px;
+  border: none;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 @media screen and(max-width:1024px) {

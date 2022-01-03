@@ -7,29 +7,21 @@ import WatchMovie from "./Components/WatchMovie/WatchMovie";
 import ViewMore from "./Components/ViewMore/ViewMore";
 import Search from "./Components/Search/Search";
 import "./App.scss";
-import { useState } from "react";
+import Playlist from "./Components/Playlist/Playlist";
 
 function App() {
-  const [dataSearch, setDataSearch] = useState([]);
-  const handleSearch = (data) => {
-    setDataSearch(data);
-  };
-
-  console.log(dataSearch);
   return (
     <BrowserRouter>
-      <Header Search={handleSearch} />
+      <Header />
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:type/:name/:id" element={<Info />} />
           <Route path="/:type/:name/:id/watch" element={<WatchMovie />} />
-          <Route path="/:type" element={<ViewMore dataSearch={dataSearch} />} />
-          <Route
-            path="/:type/:page"
-            element={<ViewMore dataSearch={dataSearch} />}
-          />
+          <Route path="/:type" element={<ViewMore />} />
+          <Route path="/:type/:page" element={<ViewMore />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/playlist" element={<Playlist />} />
         </Routes>
       </div>
       <Footer />

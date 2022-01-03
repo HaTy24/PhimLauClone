@@ -16,6 +16,8 @@ function SingleMovie() {
   const [season, setSeason] = useState(1);
   const Episode = [];
   const Season = [];
+  const storage = [];
+
   useEffect(() => {
     axios
       .get(BaseUrl + type + "/" + id + key)
@@ -32,7 +34,7 @@ function SingleMovie() {
           ].style.backgroundColor = "red";
         }
       });
-  }, [type, id, episode, season]);
+  }, [type, id]);
 
   useEffect(() => {
     document.title =
@@ -63,6 +65,26 @@ function SingleMovie() {
     e.target.style.backgroundColor = "red";
   };
 
+  useEffect(() => {
+    for (var i = 0, len = localStorage.length; i < len; ++i) {
+      storage.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+    }
+    const playList = document.querySelector(".buttonPlayList");
+    const check = storage.some((i) => {
+      return i.id === parseInt(id);
+    });
+
+    if (check === true) {
+      playList.innerHTML = "Added Playlist ";
+      playList.style.border = "1px solid green";
+      playList.disabled = true;
+    } else {
+      playList.style.border = "1px solid red";
+      playList.innerHTML = '<ion-icon name="add"></ion-icon> Playlist';
+      playList.disabled = false;
+    }
+  });
+
   return (
     <div className="single">
       <iframe
@@ -81,7 +103,12 @@ function SingleMovie() {
 
         <div className="single-button">
           <BtnShare />
-          <BtnPlayList />
+          <BtnPlayList
+            id={detail.id}
+            name={detail.title ? detail.title : detail.name}
+            img={detail.poster_path}
+            type={type}
+          />
         </div>
       </div>
       <div className="single-season">

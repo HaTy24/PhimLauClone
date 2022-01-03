@@ -1,0 +1,55 @@
+@import "../../Variable.scss";
+.playlist {
+  padding-top: 100px;
+  margin: 0 50px;
+  min-height: 80vh;
+  &-item {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 30px;
+    gap: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: $four-color;
+    padding: 10px 30px;
+    border-bottom: 2px solid $third-color;
+    &:hover {
+      background-color: $third-color;
+    }
+    ion-icon {
+      font-size: 35px;
+    }
+    img {
+      width: 60px;
+      // border-radius: 20px;
+    }
+  }
+  &-name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  &-empty {
+    font-size: 50px;
+  }
+}
+
+@media screen and(max-width:970px) {
+  .playlist {
+    &-item {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .playlist {
+    &-empty {
+      font-size: 35px;
+    }
+  }
+}

@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { img_500, BaseUrl, key, img_original } from "../config";
-
+import { img_500, img_original } from "../config";
 import "./ComingUp.scss";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { BtnWatchNow } from "../Button/Button";
+import { LocalState } from "../../Context/DetailAPI";
 
 function Trending() {
-  const [comingUp, setComingUp] = useState([]);
-  const [nowPlaying, setNowPlaying] = useState([]);
+  const Value = useContext(LocalState);
   const settings = {
     className: "slider",
     infinite: true,
@@ -31,31 +29,13 @@ function Trending() {
     ],
   };
 
-  useEffect(() => {
-    axios
-      .get(`${BaseUrl}movie/upcoming${key}`)
-      .then(function (response) {
-        // handle success
-        setComingUp(response.data.results.slice(0, 16));
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get(`${BaseUrl}movie/now_playing${key}`)
-      .then((response) => setNowPlaying(response.data.results));
-  }, []);
-
   return (
     <>
       <div className="trending">
         <Slider {...settings}>
-          {comingUp.map((item) => {
+          {Value.comingUp.map((item, i) => {
             return (
-              <div>
+              <div key={i}>
                 <div
                   className="trending-top"
                   style={{
@@ -80,7 +60,7 @@ function Trending() {
         <div className="trending-nowPlaying">
           <span className="trending-nowPlaying-title">Now Playing</span>
           <div className="trending-nowPlaying-items">
-            {nowPlaying.map((item, i) => {
+            {Value.nowPlaying.map((item, i) => {
               return (
                 <Link
                   to={`movie/${item.title.replaceAll(" ", "")}/${item.id}`}
