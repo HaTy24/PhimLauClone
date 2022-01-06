@@ -8,22 +8,31 @@
     align-items: center;
     width: 60%;
     margin-bottom: 30px;
-    gap: 30px;
+    gap: 20px;
     margin: 0 auto;
     cursor: pointer;
     background-color: $four-color;
     padding: 10px 30px;
     border-bottom: 2px solid $third-color;
-    &:hover {
-      background-color: $third-color;
-    }
+    // &:hover {
+    //   background-color: $third-color;
+    // }
     img {
       width: 60px;
-      // border-radius: 20px;
     }
   }
   ion-icon {
     font-size: 35px;
+  }
+  ion-icon[name="close"] {
+    &:hover {
+      color: $second-color;
+    }
+  }
+  ion-icon[name="play"] {
+    &:hover {
+      color: $five-color;
+    }
   }
   &-name {
     width: 100%;

@@ -22,12 +22,31 @@
     ul {
       display: grid;
       grid-template-columns: repeat(5, auto);
+      gap: 10px;
       li {
         cursor: pointer;
-        border-radius: 8px;
-        padding: 10px 20px;
-        &:hover {
-          background-color: $third-color;
+        padding-bottom: 3px;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          border-bottom: 2px solid $second-color;
+          bottom: 0;
+          width: 100%;
+          visibility: hidden;
+          height: 100%;
+        }
+        &:hover::before {
+          visibility: visible;
+          animation: slider 0.5s;
+        }
+      }
+      @keyframes slider {
+        from {
+          transform: rotateY(90deg);
+        }
+        to {
+          transform: rotateY(180deg);
         }
       }
     }
@@ -47,7 +66,6 @@
     &:hover {
       border: 3px solid $second-color;
     }
-
     &:hover ion-icon {
       opacity: 1;
       visibility: visible;
@@ -123,7 +141,7 @@
   }
 }
 .active {
-  background-color: $third-color;
+  border-bottom: 3px solid $second-color;
 }
 @media screen and(max-width:970px) {
   .list {
@@ -145,6 +163,7 @@
       &-left {
         ul {
           grid-template-columns: repeat(3, auto);
+          gap: 20px;
         }
       }
     }

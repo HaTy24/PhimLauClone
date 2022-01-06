@@ -7,6 +7,8 @@ import "./Header.scss";
 function Header({ Search }) {
   const [email, setEmail] = useState({});
   const location = useLocation();
+  const textStyle =
+    "2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff";
   const handleToggle = () => {
     document.querySelector("ul").classList.toggle("active");
     document
@@ -16,17 +18,23 @@ function Header({ Search }) {
   useEffect(() => {
     document.querySelectorAll("li").forEach((item) => {
       item.style.color = "white";
+      item.style.textShadow = "none";
     });
     if (location.pathname === "/") {
       document.querySelector(".home").style.color = "red";
+      document.querySelector(".home").style.textShadow = textStyle;
     } else if (location.pathname.slice(0, 6) === "/movie") {
       document.querySelector(".movie").style.color = "red";
+      document.querySelector(".movie").style.textShadow = textStyle;
     } else if (location.pathname.slice(0, 3) === "/tv") {
       document.querySelector(".tv").style.color = "red";
+      document.querySelector(".tv").style.textShadow = textStyle;
     } else if (location.pathname.slice(0, 7) === "/search") {
       document.querySelector(".tim").style.color = "red";
+      document.querySelector(".tim").style.textShadow = textStyle;
     } else {
       document.querySelector(".listt").style.color = "red";
+      document.querySelector(".listt").style.textShadow = textStyle;
     }
   }, [location.pathname]);
 

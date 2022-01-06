@@ -15,7 +15,7 @@ function Trending() {
     infinite: true,
     arrows: false,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     pauseOnHover: false,
     speed: 800,
     autoplaySpeed: 3000,

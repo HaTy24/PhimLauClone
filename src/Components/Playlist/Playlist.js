@@ -40,7 +40,7 @@ function Playlist() {
                     setRerender(Math.random());
                   }}
                 >
-                  <ion-icon name="trash"></ion-icon>
+                  <ion-icon name="close"></ion-icon>
                 </div>
               </div>
             </Link>

@@ -11,11 +11,6 @@
       font-size: 30px;
       color: $second-color;
     }
-    span {
-      display: block;
-      color: red;
-      padding-bottom: 7px;
-    }
   }
   &-button {
     display: flex;
@@ -55,6 +50,7 @@
     }
     &-title {
       display: block;
+      padding: 0 20px;
     }
     &-button {
       margin-top: 20px;

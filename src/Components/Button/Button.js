@@ -79,8 +79,12 @@ export const BtnShare = () => {
   return (
     <FacebookShareButton url={window.location.href}>
       <button className="buttonShare" type="submit">
-        <FacebookIcon size={40} round={true} />
-        Share
+        <span>
+          Share <ion-icon name="share-social"></ion-icon>
+        </span>
+        <span>
+          <FacebookIcon size={40} round={true} />
+        </span>
       </button>
     </FacebookShareButton>
   );
@@ -131,7 +135,7 @@ export const BtnClearPlaylist = ({ reload }) => {
       className="buttonClearPLaylist"
       onClick={handleClearPLaylist}
     >
-      Clear All Playlist
+      Clear All Playlist <ion-icon name="trash-outline"></ion-icon>
     </button>
   );
 };
