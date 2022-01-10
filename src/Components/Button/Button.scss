@@ -1,4 +1,5 @@
-@import "../../Variable.scss";
+@import "../../Sass/Variable.scss";
+
 .buttonViewMore {
   border: none;
   background-color: $five-color;
@@ -221,8 +222,6 @@
   border-radius: 8px;
   margin-bottom: 20px;
   display: block;
-  &:hover {
-  }
 }
 
 @media screen and(max-width:1024px) {

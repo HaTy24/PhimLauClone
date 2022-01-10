@@ -1,4 +1,4 @@
-@import "../../Variable.scss";
+@import "../../Sass/Variable.scss";
 
 .trailer {
   margin-top: 50px;
@@ -18,7 +18,6 @@
     display: block;
   }
   &-item {
-    border: 1px solid $four-color;
     padding: 30px 10px 10px;
     background-color: $third-color;
     border-radius: 8px;
