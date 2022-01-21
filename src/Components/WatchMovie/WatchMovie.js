@@ -140,8 +140,8 @@ function SingleMovie() {
             </Link>
           );
         })}
-        <Similar id={id} type={type} />
       </div>
+      <Similar id={id} type={type} />
     </div>
   );
 }

@@ -109,9 +109,9 @@
 @media screen and(max-width:767px) {
   .trending {
     &-top {
-      height: 110vh;
+      height: 120vh;
       flex-direction: column-reverse;
-      gap: 0;
+      justify-content: center;
     }
     .slider {
       img {

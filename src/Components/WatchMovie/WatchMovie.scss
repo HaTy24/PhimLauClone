@@ -23,14 +23,14 @@
   &-season {
     margin: 30px 50px;
     display: flex;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-bottom: 10px;
     gap: 5px;
   }
   &-episode {
     margin: 0 50px 50px;
     display: flex;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-bottom: 10px;
     gap: 8px;
   }
