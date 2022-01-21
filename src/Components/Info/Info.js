@@ -3,11 +3,9 @@ import { BaseUrl, key, img_500, img_original } from "../config";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { BtnPlay, BtnPlayList, BtnShare } from "../Button/Button";
-import Cast from "./Cast";
-import Video from "./Video";
-import Similar from "./Similar";
 
 import "./Info.scss";
+import "../../Sass/Grid.scss";
 
 function Info() {
   const [detail, setDetail] = useState([]);
@@ -117,9 +115,6 @@ function Info() {
           </div>
         </div>
       </div>
-      <Cast id={id} type={type} />
-      <Video id={id} type={type} />
-      <Similar id={id} type={type} />
     </div>
   );
 }

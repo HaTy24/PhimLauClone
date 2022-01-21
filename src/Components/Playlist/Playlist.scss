@@ -1,7 +1,6 @@
 @import "../../Sass/Variable.scss";
 .playlist {
   padding-top: 100px;
-  margin: 0 50px;
   min-height: 80vh;
   &-item {
     display: flex;
@@ -48,7 +47,6 @@
 
 @media screen and(max-width:970px) {
   .playlist {
-    margin: 0 30px;
     &-item {
       width: 100%;
       gap: 20px;
@@ -58,7 +56,8 @@
 
 @media screen and (max-width: 540px) {
   .playlist {
-    margin: 0 20px;
+    padding-left: 16px;
+    padding-right: 16px;
     &-item {
       width: 100%;
       gap: 15px;

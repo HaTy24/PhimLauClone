@@ -1,14 +1,13 @@
 @import "../../Sass/Variable.scss";
 .list {
   padding-top: 100px;
-  margin: 0 50px;
   position: relative;
   &-navigation {
     margin-bottom: 20px;
     &-left {
       display: flex;
-      justify-content: start;
-      align-items: flex-start;
+      justify-content: space-between;
+      align-items: center;
       gap: 20px;
       padding-bottom: 10px;
       border-bottom: 2px solid $third-color;
@@ -20,8 +19,7 @@
       border-radius: 10px 10px 0 10px;
     }
     ul {
-      display: grid;
-      grid-template-columns: repeat(5, auto);
+      justify-content: center;
       gap: 10px;
       li {
         cursor: pointer;
@@ -84,16 +82,6 @@
       color: $second-color;
     }
   }
-  &-span {
-    background-color: yellow;
-    color: #000;
-    font-size: 10px;
-    display: inline-block;
-    padding: 3px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    margin: 5px;
-  }
   &-title {
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.8);
     background-color: rgba($color: #000000, $alpha: 0.8);
@@ -143,30 +131,24 @@
 .active {
   border-bottom: 3px solid $second-color;
 }
+
 @media screen and(max-width:970px) {
   .list {
-    margin: 0 30px;
     &-navigation {
       &-left {
-        flex-direction: column;
         font-size: 12px;
       }
     }
   }
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media screen and(max-width:767px) {
   .list {
-    margin: 0 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    &-navigation {
-      &-left {
-        ul {
-          grid-template-columns: repeat(3, auto);
-          gap: 20px;
-        }
-      }
-    }
+    padding-left: 16px;
+    padding-right: 16px;
     &-fly {
       display: none;
     }
@@ -184,12 +166,5 @@
 @media screen and (max-width: 500px) {
   .list {
     padding-top: 50px;
-    &-navigation {
-      &-left {
-        ul {
-          grid-template-columns: repeat(2, auto);
-        }
-      }
-    }
   }
 }

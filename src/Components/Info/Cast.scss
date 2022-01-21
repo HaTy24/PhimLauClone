@@ -1,19 +1,17 @@
 @import "../../Sass/Variable.scss";
 .cast {
-  margin-top: 230px;
-  padding: 0 50px;
+  padding-top: 210px;
   &-items {
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     gap: 15px;
-    padding-bottom: 10px;
   }
   &-item {
     cursor: pointer;
     height: 80%;
     transition: all 0.2s linear;
     &:hover {
-      transform: scale(1.07);
+      transform: translateY(-4px);
     }
     img {
       width: 120px;
@@ -26,7 +24,7 @@
     display: block;
     text-align: center;
     font-size: 14px;
-    color: $third-color;
+    color: $second-color;
   }
   &-movie {
     color: $second-color;
@@ -73,21 +71,10 @@
   }
 }
 
-@media screen and (max-width: 970px) {
-  .cast {
-    padding: 0px 30px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .search {
-    padding: 100px 20px 20px;
-  }
-}
-
 @media screen and(max-width:767px) {
   .cast {
-    padding: 0 20px;
+    padding-left: 16px;
+    padding-right: 16px;
     &-item {
       h3 {
         font-size: 14px;

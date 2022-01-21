@@ -21,7 +21,7 @@ export const BtnViewMore = (props) => {
 
 export const BtnWatchNow = (props) => {
   return (
-    <Link to={`/${props.type}/${props.name}/${props.id}`}>
+    <Link to={`/${props.type}/${props.name.replaceAll(" ", "-")}/${props.id}`}>
       <button type="submit" className="buttonWatchNow">
         Watching Now
       </button>
@@ -53,7 +53,7 @@ export const BtnWatch = (props) => {
         className="buttonWatch"
         type="submit"
       >
-        <ion-icon name="caret-forward-outline"></ion-icon> Watch Movies
+        <ion-icon name="caret-forward-outline"></ion-icon> Watch Movie
       </button>
     </Link>
   );
@@ -119,7 +119,7 @@ export const BtnSearch = ({ handleS }) => {
   };
   return (
     <button onClick={handleSearch} className="buttonSearch" type="submit">
-      Tìm Kiếm
+      Search
     </button>
   );
 };

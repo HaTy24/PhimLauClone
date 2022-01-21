@@ -4,6 +4,7 @@ import { BtnSearch } from "../Button/Button";
 import { BaseUrl, key } from "../config";
 import Item from "../List/Item";
 import "./Search.scss";
+import "../../Sass/Grid.scss";
 
 function Credits() {
   const [input, setInput] = useState("spider");
@@ -26,11 +27,11 @@ function Credits() {
   };
 
   return (
-    <div className="search">
+    <div className="search grid wide">
       <div className="search-form">
         <input
           type="text"
-          placeholder="Nhập tên bộ phim..."
+          placeholder="Search..."
           onChange={(e) => handleInput(e)}
         />
         <BtnSearch handleS={handleSearch} />

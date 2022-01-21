@@ -1,6 +1,6 @@
 @import "../../Sass/Variable.scss";
 .viewMore {
-  padding: 100px 50px 50px;
+  padding-top: 100px;
   input {
     background-color: $main-color;
     padding: 8px 14px;
@@ -23,15 +23,10 @@
   }
 }
 
-@media screen and (max-width: 970px) {
-  .viewMore {
-    padding: 100px 30px 30px;
-  }
-}
-
 @media screen and(max-width:767px) {
   .viewMore {
-    padding: 100px 20px 20px;
+    padding-left: 16px;
+    padding-right: 16px;
     &-first,
     &-last {
       display: block;

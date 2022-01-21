@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BaseUrl, key } from "../config";
 import Item from "../List/Item";
 import "./Similar.scss";
+import "../../Sass/Grid.scss";
 
 function Similar(props) {
   const [similar, setSimilar] = useState([]);
@@ -13,7 +14,7 @@ function Similar(props) {
   }, [props.id, props.type]);
 
   return (
-    <div className="similar">
+    <div className="similar grid wide">
       <h1 className="trailer-title">Similar</h1>
       <Item array={similar} type={"/" + props.type} />
     </div>

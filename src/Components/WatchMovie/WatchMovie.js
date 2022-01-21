@@ -4,6 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { BtnPlayList, BtnShare } from "../Button/Button";
 import { BaseUrl, key } from "../config";
 import "./WatchMovie.scss";
+import "../../Sass/Grid.scss";
+import Similar from "../Info/Similar";
 
 function SingleMovie() {
   const location = useLocation();
@@ -138,6 +140,7 @@ function SingleMovie() {
             </Link>
           );
         })}
+        <Similar id={id} type={type} />
       </div>
     </div>
   );

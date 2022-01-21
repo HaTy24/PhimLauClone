@@ -1,13 +1,13 @@
 @import "../../Sass/Variable.scss";
 .search {
-  padding: 100px 50px 50px;
+  padding-top: 100px;
+  padding-bottom: 50px;
   &-form {
     display: block;
-    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
-    gap: 8px;
     margin-bottom: 50px;
+    gap: 8px;
     input {
       color: #000;
       outline: none;
@@ -21,7 +21,6 @@
 
 @media screen and (max-width: 970px) {
   .search {
-    padding: 100px 30px 30px;
     input {
       width: 50%;
     }
@@ -30,9 +29,11 @@
 
 @media screen and (max-width: 767px) {
   .search {
-    padding: 100px 20px 20px;
     input {
       width: 70%;
+    }
+    &-form {
+      justify-content: center;
     }
   }
 }

@@ -5,6 +5,7 @@ import { BaseUrl, key } from "../config";
 import { Link } from "react-router-dom";
 import Item from "../List/Item";
 import "./ViewMore.scss";
+import "../../Sass/Grid.scss";
 
 function ViewMore({ dataSearch }) {
   //InitState
@@ -89,7 +90,7 @@ function ViewMore({ dataSearch }) {
   });
 
   return (
-    <div className="viewMore">
+    <div className="viewMore grid wide">
       <h1 className="viewMore-title">
         {pathName === "movie" ? "Movies" : "TV Series"}
       </h1>

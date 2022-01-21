@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BtnClearPlaylist } from "../Button/Button";
 import { img_500 } from "../config";
 import "./Playlist.scss";
+import "../../Sass/Grid.scss";
 
 function Playlist() {
   const [, setRerender] = useState(0);
@@ -18,7 +19,7 @@ function Playlist() {
   };
 
   return (
-    <div className="playlist">
+    <div className="playlist grid wide">
       <h1 className="viewMore-title"> Your Playlist</h1>
       <BtnClearPlaylist reload={reload} />
       {storage.length !== 0 ? (

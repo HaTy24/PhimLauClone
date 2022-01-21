@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { img_500, unavailable } from "../config";
 import { BtnFavorite, BtnWatch } from "../Button/Button";
 
 function Item(props) {
-  const [detail, setDetail] = useState({});
+  const [detail, setDetail] = useState({ name: "billion", title: "billion" });
   const [hover, setHover] = useState({
     opacity: 0,
     visibility: "hidden",
@@ -85,38 +85,47 @@ function Item(props) {
                 })`,
               }}
             >
-              <span className="list-span">HD-VIetsub</span>
               <ion-icon name="caret-forward-circle-sharp"></ion-icon>
             </div>
           </Link>
         );
       })}
-      <div
-        className="list-fly"
-        style={{
-          top: position.top,
-          left: position.left,
-          opacity: hover.opacity,
-          visibility: hover.visibility,
-        }}
+      <Link
+        to={`/${
+          props.type ? (props.type.includes("movie") ? "movie" : "tv") : null
+        }/${(detail.name ? detail.name : detail.title).replaceAll(" ", "-")}/${
+          detail.id
+        }`}
       >
-        <h1 className="list-fly-name">
-          {detail.title ? detail.title : detail.name}
-        </h1>
-        <div className="list-fly-group">
-          <span className="list-fly-imdb">
-            IMDb: {detail.vote_average ? detail.vote_average.toFixed(1) : null}
-          </span>
-          <span className="list-fly-release">{detail.release_date}</span>
+        <div
+          className="list-fly"
+          onClick={() => window.scroll(0, 0)}
+          style={{
+            top: position.top,
+            left: position.left,
+            opacity: hover.opacity,
+            visibility: hover.visibility,
+          }}
+        >
+          <h1 className="list-fly-name">
+            {detail.title ? detail.title : detail.name}
+          </h1>
+          <div className="list-fly-group">
+            <span className="list-fly-imdb">
+              IMDb:{" "}
+              {detail.vote_average ? detail.vote_average.toFixed(1) : null}
+            </span>
+            <span className="list-fly-release">{detail.release_date}</span>
+          </div>
+          <p className="list-fly-overview">{detail.overview}</p>
+          <BtnWatch
+            id={detail.id}
+            name={detail.title ? detail.title : detail.name}
+            type={props.type}
+          />
+          <BtnFavorite />
         </div>
-        <p className="list-fly-overview">{detail.overview}</p>
-        <BtnWatch
-          id={detail.id}
-          name={detail.title ? detail.title : detail.name}
-          type={props.type}
-        />
-        <BtnFavorite />
-      </div>
+      </Link>
     </div>
   );
 }

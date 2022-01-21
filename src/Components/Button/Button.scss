@@ -5,25 +5,22 @@
   background-color: $five-color;
   padding: 5px 10px;
   border-radius: 2px;
+  position: relative;
   display: flex;
   align-items: center;
   gap: 5px;
-  position: absolute;
-  top: 100px;
-  right: 0;
-  overflow: hidden;
-  z-index: 1;
   cursor: pointer;
+  z-index: 1;
   &::before {
     content: "";
     position: absolute;
-    left: 0;
+    right: 0;
     width: 0%;
     height: 100%;
-    background-color: $second-color;
+    background-color: #2081e9;
     padding: 0;
     z-index: -1;
-    transition: all 0.15s linear;
+    transition: all 0.1s linear;
   }
   ion-icon {
     font-size: 20px;
@@ -228,14 +225,5 @@
   .buttonWatchNow {
     font-size: 20px;
     padding: 10px 20px;
-  }
-}
-
-@media screen and(max-width:767px) {
-  .buttonViewMore {
-    position: relative;
-    top: 30px;
-    margin: 0 auto;
-    margin-bottom: 50px;
   }
 }

@@ -5,6 +5,8 @@ import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import "./Video.scss";
 
+import "../../Sass/Grid.scss";
+
 function Video(props) {
   const [video, setVideo] = useState([]);
   const [open, setOpen] = useState(false);
@@ -29,7 +31,7 @@ function Video(props) {
   };
 
   return (
-    <div className="trailer">
+    <div className="trailer grid wide">
       <h2 className="trailer-title">Trailer</h2>
       <div className="trailer-items">
         {video.map((item, i) => {
@@ -39,7 +41,7 @@ function Video(props) {
               className="trailer-item"
               onClick={() => handleClickOpen(item.key, item.name)}
             >
-              <span className="trailer-name">Trailer: {item.name}</span>
+              <span className="trailer-name">{item.name}</span>
               <span className="trailer-type">Type: {item.type}</span>
               <span className="trailer-official">
                 {item.official === true ? "Official Trailer" : ""}

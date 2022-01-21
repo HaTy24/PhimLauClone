@@ -4,9 +4,8 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 100vh;
-    gap: 200px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -89,19 +88,6 @@
   padding: 18px 36px;
   font-size: 20px;
   background-color: #333333;
-}
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: $main-color;
-}
-::-webkit-scrollbar-thumb {
-  background: $third-color;
-  border-radius: 20px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 @media screen and (max-width: 1024px) {

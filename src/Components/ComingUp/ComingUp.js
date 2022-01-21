@@ -3,10 +3,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { img_500, img_original } from "../config";
-import "./ComingUp.scss";
 import { Link } from "react-router-dom";
 import { BtnWatchNow } from "../Button/Button";
 import { LocalState } from "../../Context/DetailAPI";
+import "./ComingUp.scss";
+import "../../Sass/Grid.scss";
 
 function Trending() {
   const Value = useContext(LocalState);
@@ -18,7 +19,7 @@ function Trending() {
     autoplay: true,
     pauseOnHover: false,
     speed: 800,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
     responsive: [
       {
         breakpoint: 767,

@@ -91,11 +91,14 @@ function Header({ Search }) {
           <li className="tv" onClick={handleScroll}>
             <Link to="/tv">TV Series</Link>
           </li>
-          <li className="tim" onClick={handleScroll}>
-            <Link to="/search">Search</Link>
-          </li>
           <li className="listt" onClick={handleScroll}>
             <Link to="/playlist">Playlist</Link>
+          </li>
+          <li className="tim" onClick={handleScroll}>
+            <Link to="/search">
+              <ion-icon name="search"></ion-icon>
+              Search
+            </Link>
           </li>
         </ul>
       </div>

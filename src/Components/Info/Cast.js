@@ -3,9 +3,10 @@ import { BaseUrl, key, img_500, unavailable } from "../config";
 import axios from "axios";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
-import "./Cast.scss";
 import { DialogContent } from "@mui/material";
 import { Link } from "react-router-dom";
+import "../../Sass/Grid.scss";
+import "./Cast.scss";
 
 function Cast(props) {
   const [cast, setCast] = useState([]);
@@ -35,7 +36,7 @@ function Cast(props) {
   };
 
   return (
-    <div className="cast">
+    <div className="cast grid wide">
       <h2 className="trailer-title">Cast</h2>
       <div className="cast-items">
         {cast.cast

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BaseUrl, key } from "../config";
-import "./List.scss";
 import Item from "./Item";
+import "./List.scss";
+import "../../Sass/Grid.scss";
 
 function LNewRelease() {
   const [newRelease, setNewRelease] = useState([]);
@@ -24,11 +25,11 @@ function LNewRelease() {
   };
 
   return (
-    <div className="list">
+    <div className="list grid wide">
       <div className="list-navigation">
-        <div className="list-navigation-left">
+        <div className="list-navigation-left flex-column">
           <h1>Recommended</h1>
-          <ul>
+          <ul className="row">
             <li
               id="li"
               className="active"
